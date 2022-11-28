@@ -1,0 +1,9 @@
+@media (min-width: 320px) and (max-width: 575.98px) {
+  .menu ul {
+    flex-direction: column;
+    text-align: right;
+  }
+  .menu ul li {
+    margin-left: 0;
+  }
+}
