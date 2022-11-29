@@ -25,7 +25,7 @@
     height: 120px;
     padding: 6px;
     background: rgba(223, 104, 18, 0.5);
-    box-shadow: -11px 20px 32px 20px rgb(223 104 18 / 44%);
+    box-shadow: -5px 4px 12px 4px rgb(223 104 18 / 44%);
     backdrop-filter: blur(3px);
     -webkit-backdrop-filter: blur(3px);
     border-radius: 10px;
