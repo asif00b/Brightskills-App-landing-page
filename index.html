@@ -14,6 +14,11 @@
     />
 
     <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <!-- owl -->
+    <link rel="stylesheet" href="css/owl.carousel.min.css" />
+    <!-- owl -->
+    <link rel="stylesheet" href="css/all.min.css" />
     <link rel="stylesheet" href="css/style.css" />
     <link rel="stylesheet" href="css/responsive.css" />
   </head>
@@ -30,27 +35,27 @@
             </div>
           </div>
           <div class="col-lg-8">
-            <div class="menu">
+            <div class="menu" id="menu">
+              <i class="fa-solid fa-bars" id="bar" onclick="showMenu()"></i>
+              <i class="fa-solid fa-xmark" id="hide" onclick="hideMenu()"></i>
               <ul>
-                <li>
+                <li id="m1">
                   <a href="#">Home</a>
                 </li>
-                <li>
-                  <a href="#">About</a>
+                <li id="m2">
+                  <a href="#about">About</a>
                 </li>
-                <li>
-                  <a href="#">Features</a>
+                <li id="m3">
+                  <a href="#features">Features</a>
                 </li>
-                <li>
-                  <a href="#">Why Us?</a>
+                <li id="m4">
+                  <a href="#why_us">Why Us?</a>
                 </li>
-                <li>
+                <li id="m5">
                   <a href="#">Screenshot</a>
                 </li>
-                <li>
-                  <a href="#">Our Team</a>
-                </li>
-                <li>
+
+                <li id="m6">
                   <a href="#">Contact</a>
                 </li>
               </ul>
@@ -83,9 +88,7 @@
           <div class="heroV">
             <img src="images/heroV.png" alt="" />
           </div>
-          <div class="cover">
-            <img src="images/nn.png" alt="" />
-          </div>
+
           <svg
             viewBox="0 0 1440 812"
             fill="none"
@@ -299,10 +302,454 @@
         </div>
       </div>
     </section>
+
+    <!-- about -->
+    <section id="about">
+      <div class="container">
+        <div class="title">
+          <h2>Learn <span>About Us</span></h2>
+          <hr />
+        </div>
+        <div class="about_us">
+          <div class="row align-items-center">
+            <div class="col-lg-6">
+              <div
+                class="about_txt"
+                data-aos="fade-right"
+                data-aos-easing="ease-in-sine"
+              >
+                <h3>Who we are</h3>
+                <p>
+                  Bright Skills is one of the best e-learning skill development
+                  platform in Bangladesh. We are committed to eliminating
+                  unemployment from the country and creating global human
+                  resources through skill development.
+                </p>
+              </div>
+            </div>
+            <div class="col-lg-6">
+              <div class="about_vid" data-aos="zoom-in-left">
+                <!-- <div class="play_btn">
+                  <i class="fa-solid fa-circle-play"></i>
+                </div> -->
+                <video controls src="videos/about.mp4"></video>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- usage -->
+    <section id="usage">
+      <div class="container">
+        <div class="title">
+          <h2>How to <span>Use it ?</span></h2>
+          <hr />
+        </div>
+        <div class="main">
+          <div class="row justify-content-evenly">
+            <div class="col-lg-3">
+              <div class="u_card" data-aos="fade-right" data-aos-delay="50">
+                <div class="icon">
+                  <i class="fa-solid fa-download"></i>
+                </div>
+                <div class="txt">
+                  <h4>Install the app</h4>
+                  <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Nostrum iste dolor quasi aliquid, quia inventore?
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-1">
+              <div class="ra" data-aos="fade-right" data-aos-delay="60">
+                <img src="images/right-arrow.png" alt="" />
+              </div>
+            </div>
+            <div class="col-lg-3">
+              <div class="u_card" data-aos="fade-right" data-aos-delay="70">
+                <div class="icon">
+                  <i class="fa-solid fa-user"></i>
+                </div>
+                <div class="txt">
+                  <h4>Create account</h4>
+                  <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Nostrum iste dolor quasi aliquid, quia inventore?
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-1" data-aos="fade-right">
+              <div class="ra" data-aos="fade-right" data-aos-delay="80">
+                <img src="images/right-arrow.png" alt="" />
+              </div>
+            </div>
+            <div class="col-lg-3">
+              <div class="u_card" data-aos="fade-right" data-aos-delay="90">
+                <div class="icon">
+                  <i class="fa-solid fa-book-bookmark"></i>
+                </div>
+                <div class="txt">
+                  <h4>Browse courses</h4>
+                  <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Nostrum iste dolor quasi aliquid, quia inventore?
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- features -->
+    <section id="features">
+      <div class="container">
+        <div class="title">
+          <h2>App <span>Features</span></h2>
+          <hr />
+        </div>
+        <div class="main">
+          <div class="row">
+            <div class="col-lg-4">
+              <div class="left_features">
+                <div
+                  class="feature"
+                  data-aos="fade-right"
+                  data-aos-delay="100"
+                  data-aos-duration="1000"
+                >
+                  <div class="icon">
+                    <i class="fa-brands fa-tiktok"></i>
+                  </div>
+                  <div class="txt">
+                    <h3>Personalized Experience</h3>
+                    <p>Targeted users here are learners of all age groups.</p>
+                  </div>
+                </div>
+                <div
+                  class="feature"
+                  data-aos="fade-right"
+                  data-aos-delay="200"
+                  data-aos-duration="1000"
+                >
+                  <div class="icon">
+                    <i class="fa-brands fa-tiktok"></i>
+                  </div>
+                  <div class="txt">
+                    <h3>Live Tutorials</h3>
+                    <p>
+                      One-on-one learning. Group learning. Course-based
+                      learning.
+                    </p>
+                  </div>
+                </div>
+                <div
+                  class="feature"
+                  data-aos="fade-right"
+                  data-aos-delay="300"
+                  data-aos-duration="1000"
+                >
+                  <div class="icon">
+                    <i class="fa-brands fa-tiktok"></i>
+                  </div>
+                  <div class="txt">
+                    <h3>Interactive Content</h3>
+                    <p>
+                      In elearning, interactive content is learning material
+                      that involves
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-4">
+              <div
+                class="f_mockup"
+                data-aos="fade-up"
+                data-aos-delay="300"
+                data-aos-duration="1000"
+              >
+                <img src="images/feature_mockup.png" alt="" />
+              </div>
+            </div>
+            <div class="col-lg-4">
+              <div class="right_features">
+                <div
+                  class="feature"
+                  data-aos="fade-left"
+                  data-aos-delay="100"
+                  data-aos-duration="1000"
+                >
+                  <div class="icon">
+                    <i class="fa-brands fa-tiktok"></i>
+                  </div>
+                  <div class="txt">
+                    <h3>Excellent UX/UI</h3>
+                    <p>Our Students are Mentored so well that We take Pride</p>
+                  </div>
+                </div>
+                <div
+                  class="feature"
+                  data-aos="fade-left"
+                  data-aos-delay="200"
+                  data-aos-duration="1000"
+                >
+                  <div class="icon">
+                    <i class="fa-brands fa-tiktok"></i>
+                  </div>
+                  <div class="txt">
+                    <h3>Certification</h3>
+                    <p>
+                      Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                    </p>
+                  </div>
+                </div>
+                <div
+                  class="feature"
+                  data-aos="fade-left"
+                  data-aos-delay="300"
+                  data-aos-duration="1000"
+                >
+                  <div class="icon">
+                    <i class="fa-brands fa-tiktok"></i>
+                  </div>
+                  <div class="txt">
+                    <h3>Video-based Content</h3>
+                    <p>
+                      Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- why us -->
+    <section id="why_us">
+      <div class="container">
+        <div class="title">
+          <h2>Why <span>Us ?</span></h2>
+          <hr />
+        </div>
+        <div class="main">
+          <div class="row">
+            <div class="col-lg-4">
+              <div class="card" data-aos="flip-right">
+                <div class="sneaker">
+                  <img
+                    class="c-img"
+                    src="images/slaider (2).png"
+                    alt="png img"
+                  />
+                </div>
+                <div class="info">
+                  <h1 class="title">card title</h1>
+                  <p>
+                    Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                    Ipsum quis saepe rerum velit hic doloremque!
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-4">
+              <div class="card" data-aos="flip-left">
+                <div class="sneaker">
+                  <img
+                    class="c-img"
+                    src="images/slaider (2).png"
+                    alt="png img"
+                  />
+                </div>
+                <div class="info">
+                  <h1 class="title">card title</h1>
+                  <p>
+                    Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                    Ipsum quis saepe rerum velit hic doloremque!
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-4">
+              <div class="card" data-aos="flip-right">
+                <div class="sneaker">
+                  <img
+                    class="c-img"
+                    src="images/slaider (2).png"
+                    alt="png img"
+                  />
+                </div>
+                <div class="info">
+                  <h1 class="title">card title</h1>
+                  <p>
+                    Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                    Ipsum quis saepe rerum velit hic doloremque!
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="owl-carousel">
+          <div class="card">
+            <div class="salid">
+              <div class="s">
+                <img src="images/slaider (2).png" alt="" />
+                <i class="fa-solid fa-quote-right"></i>
+              </div>
+              <div class="s1">
+                <h2>স্কিলড হওয়া যায় যখন তখন</h2>
+                <p>
+                  প্রথাগতভাবে আমরা স্কুল-কলেজে গিয়ে আমাদের শিক্ষা গ্রহন করি।
+                  কিন্তু অনলাইন মাধ্যমের কল্যানে এখন সহজেই যেকোন সময়ে যেকোনো
+                  স্থান থেকে শুধুমাত্র ইলেকট্রনিক ডিভাইস ব্যবহারের মাধ্যমে
+                  আমাদের দক্ষ হয়ে উঠার
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="card">
+            <div class="salid">
+              <div class="s">
+                <img src="images/slaider (2).png" alt="" />
+                <i class="fa-solid fa-quote-right"></i>
+              </div>
+              <div class="s1">
+                <h2>স্কিলড হওয়া যায় যখন তখন</h2>
+                <p>
+                  প্রথাগতভাবে আমরা স্কুল-কলেজে গিয়ে আমাদের শিক্ষা গ্রহন করি।
+                  কিন্তু অনলাইন মাধ্যমের কল্যানে এখন সহজেই যেকোন সময়ে যেকোনো
+                  স্থান থেকে শুধুমাত্র ইলেকট্রনিক ডিভাইস ব্যবহারের মাধ্যমে
+                  আমাদের দক্ষ হয়ে উঠার
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="card">
+            <div class="salid">
+              <div class="s">
+                <img src="images/slaider (2).png" alt="" />
+                <i class="fa-solid fa-quote-right"></i>
+              </div>
+              <div class="s1">
+                <h2>স্কিলড হওয়া যায় যখন তখন</h2>
+                <p>
+                  প্রথাগতভাবে আমরা স্কুল-কলেজে গিয়ে আমাদের শিক্ষা গ্রহন করি।
+                  কিন্তু অনলাইন মাধ্যমের কল্যানে এখন সহজেই যেকোন সময়ে যেকোনো
+                  স্থান থেকে শুধুমাত্র ইলেকট্রনিক ডিভাইস ব্যবহারের মাধ্যমে
+                  আমাদের দক্ষ হয়ে উঠার
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="card">
+            <div class="salid">
+              <div class="s">
+                <img src="images/slaider (2).png" alt="" />
+                <i class="fa-solid fa-quote-right"></i>
+              </div>
+              <div class="s1">
+                <h2>স্কিলড হওয়া যায় যখন তখন</h2>
+                <p>
+                  প্রথাগতভাবে আমরা স্কুল-কলেজে গিয়ে আমাদের শিক্ষা গ্রহন করি।
+                  কিন্তু অনলাইন মাধ্যমের কল্যানে এখন সহজেই যেকোন সময়ে যেকোনো
+                  স্থান থেকে শুধুমাত্র ইলেকট্রনিক ডিভাইস ব্যবহারের মাধ্যমে
+                  আমাদের দক্ষ হয়ে উঠার
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="card">
+            <div class="salid">
+              <div class="s">
+                <img src="images/slaider (2).png" alt="" />
+                <i class="fa-solid fa-quote-right"></i>
+              </div>
+              <div class="s1">
+                <h2>স্কিলড হওয়া যায় যখন তখন</h2>
+                <p>
+                  প্রথাগতভাবে আমরা স্কুল-কলেজে গিয়ে আমাদের শিক্ষা গ্রহন করি।
+                  কিন্তু অনলাইন মাধ্যমের কল্যানে এখন সহজেই যেকোন সময়ে যেকোনো
+                  স্থান থেকে শুধুমাত্র ইলেকট্রনিক ডিভাইস ব্যবহারের মাধ্যমে
+                  আমাদের দক্ষ হয়ে উঠার
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="card">
+            <div class="salid">
+              <div class="s">
+                <img src="images/slaider (2).png" alt="" />
+                <i class="fa-solid fa-quote-right"></i>
+              </div>
+              <div class="s1">
+                <h2>স্কিলড হওয়া যায় যখন তখন</h2>
+                <p>
+                  প্রথাগতভাবে আমরা স্কুল-কলেজে গিয়ে আমাদের শিক্ষা গ্রহন করি।
+                  কিন্তু অনলাইন মাধ্যমের কল্যানে এখন সহজেই যেকোন সময়ে যেকোনো
+                  স্থান থেকে শুধুমাত্র ইলেকট্রনিক ডিভাইস ব্যবহারের মাধ্যমে
+                  আমাদের দক্ষ হয়ে উঠার
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="card">
+            <div class="salid">
+              <div class="s">
+                <img src="images/slaider (2).png" alt="" />
+                <i class="fa-solid fa-quote-right"></i>
+              </div>
+              <div class="s1">
+                <h2>স্কিলড হওয়া যায় যখন তখন</h2>
+                <p>
+                  প্রথাগতভাবে আমরা স্কুল-কলেজে গিয়ে আমাদের শিক্ষা গ্রহন করি।
+                  কিন্তু অনলাইন মাধ্যমের কল্যানে এখন সহজেই যেকোন সময়ে যেকোনো
+                  স্থান থেকে শুধুমাত্র ইলেকট্রনিক ডিভাইস ব্যবহারের মাধ্যমে
+                  আমাদের দক্ষ হয়ে উঠার
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="card">
+            <div class="salid">
+              <div class="s">
+                <img src="images/slaider (2).png" alt="" />
+                <i class="fa-solid fa-quote-right"></i>
+              </div>
+              <div class="s1">
+                <h2>স্কিলড হওয়া যায় যখন তখন</h2>
+                <p>
+                  প্রথাগতভাবে আমরা স্কুল-কলেজে গিয়ে আমাদের শিক্ষা গ্রহন করি।
+                  কিন্তু অনলাইন মাধ্যমের কল্যানে এখন সহজেই যেকোন সময়ে যেকোনো
+                  স্থান থেকে শুধুমাত্র ইলেকট্রনিক ডিভাইস ব্যবহারের মাধ্যমে
+                  আমাদের দক্ষ হয়ে উঠার
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <script src="js/bootstrap.bundle.min.js"></script>
+    <!-- jq -->
+    <script
+      src="https://code.jquery.com/jquery-3.6.1.min.js"
+      integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ="
+      crossorigin="anonymous"
+    ></script>
+    <script src="js/owl.carousel.min.js"></script>
+    <!-- jq -->
+
     <script src="js/typed.min.js"></script>
     <script src="js/particles.min.js"></script>
     <script src="js/ps.js"></script>
+    <!-- aos -->
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
     <script src="js/script.js"></script>
   </body>
 </html>
