@@ -1,4 +1,10 @@
 @media (min-width: 320px) and (max-width: 575.98px) {
+  nav {
+    overflow: hidden;
+  }
+  .logo {
+    width: 80%;
+  }
   .sticky {
     display: none;
   }
@@ -34,10 +40,7 @@
     line-height: 30px;
     text-align: center;
     padding: 2px 8px;
-    background: linear-gradient(
-        rgba(223, 104, 18, 0.6),
-        rgba(223, 104, 18, 0.6)
-      ),
+    background: linear-gradient(rgba(255, 77, 0, 0.6), rgba(255, 77, 0, 0.6)),
       url(../images/menu_bg.png);
     background-size: cover;
     border-radius: 5px;
@@ -81,7 +84,6 @@
     font-size: 0.8rem;
     color: #ffffff;
     text-transform: uppercase;
-    pointer-events: none;
   }
   #hero_section {
     width: 100%;
@@ -207,6 +209,9 @@
     top: 106px;
     display: none;
   }
+  #hero_section .heroV {
+    display: none;
+  }
   /* banner */
   .title {
     text-align: center;
@@ -245,6 +250,7 @@
     transform: rotate(90deg);
     margin: 15px 0;
   }
+  /* features */
   #features {
     height: 100%;
   }

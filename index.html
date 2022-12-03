@@ -5,6 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>BrightSkills</title>
+    <!-- preloader link -->
+    <link rel="stylesheet" href="css/preloader.css" />
     <!-- g font -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -12,22 +14,53 @@
       href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@200;300;400;600;700;800;900&display=swap"
       rel="stylesheet"
     />
-
     <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <!-- aos -->
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
-    <!-- owl -->
-    <link rel="stylesheet" href="css/owl.carousel.min.css" />
-    <!-- owl -->
+    <!-- aos -->
     <link rel="stylesheet" href="css/all.min.css" />
     <link rel="stylesheet" href="css/style.css" />
     <link rel="stylesheet" href="css/responsive.css" />
   </head>
-  <!-- navbar -->
   <body>
+    <!-- preloader -->
+
+    <div id="pre">
+      <!-- <div id="loader"></div> -->
+      <div class="cssload-dots">
+        <div class="cssload-dot"></div>
+        <div class="cssload-dot"></div>
+        <div class="cssload-dot"></div>
+        <div class="cssload-dot"></div>
+        <div class="cssload-dot"></div>
+      </div>
+
+      <svg version="1.1" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <filter id="goo">
+            <feGaussianBlur
+              in="SourceGraphic"
+              result="blur"
+              stdDeviation="12"
+            ></feGaussianBlur>
+            <feColorMatrix
+              in="blur"
+              mode="matrix"
+              values="1 0 0 0 0	0 1 0 0 0	0 0 1 0 0	0 0 0 18 -7"
+              result="goo"
+            ></feColorMatrix>
+            <!--<feBlend in2="goo" in="SourceGraphic" result="mix" ></feBlend>-->
+          </filter>
+        </defs>
+      </svg>
+    </div>
+
+    <!-- preloader -->
+    <!-- navbar -->
     <nav>
       <div class="container">
         <div class="row align-items-center">
-          <div class="col-lg-4">
+          <div class="col-lg-2">
             <div class="logo">
               <a href="#">
                 <img src="images/logo.png" alt="" />
@@ -61,6 +94,11 @@
               </ul>
             </div>
           </div>
+          <div class="col-lg-2">
+            <div class="n_btn">
+              <button class="nav_btn">Download App</button>
+            </div>
+          </div>
         </div>
       </div>
     </nav>
@@ -71,24 +109,27 @@
         <div class="pm">
           <img src="images/heroMoc.png" alt="" />
           <div class="hero">
-            <h1><span class="type"></span></h1>
-            <p>
-              In this age of 'everything is possible', why are you calling
-              yourself 'impossible'? Develop your skills at home now - from the
-              best experts!
-            </p>
-            <a href="#">Get Started</a>
+            <div class="typed">
+              <h1><span class="type"></span></h1>
+            </div>
+            <div class="txt">
+              <p>
+                In this age of 'everything is possible', why are you calling
+                yourself 'impossible'? Develop your skills at home now - from
+                the best experts!
+              </p>
+              <a class="hero_btn effect-2">Learn More..</a>
+            </div>
           </div>
         </div>
         <div class="side_img">
           <img src="images/mobile_screen_side.png" alt="" />
           <img src="images/mobile_screen_side2.png" alt="" />
         </div>
+        <div class="heroV">
+          <img src="images/heroV.png" alt="" />
+        </div>
         <div class="background">
-          <div class="heroV">
-            <img src="images/heroV.png" alt="" />
-          </div>
-
           <svg
             viewBox="0 0 1440 812"
             fill="none"
@@ -351,7 +392,7 @@
             <div class="col-lg-3">
               <div class="u_card" data-aos="fade-right" data-aos-delay="50">
                 <div class="icon">
-                  <i class="fa-solid fa-download"></i>
+                  <i class="fa-solid fa-download ra_icon1"></i>
                 </div>
                 <div class="txt">
                   <h4>Install the app</h4>
@@ -364,13 +405,13 @@
             </div>
             <div class="col-lg-1">
               <div class="ra" data-aos="fade-right" data-aos-delay="60">
-                <img src="images/right-arrow.png" alt="" />
+                <img src="images/next.png" alt="" />
               </div>
             </div>
             <div class="col-lg-3">
               <div class="u_card" data-aos="fade-right" data-aos-delay="70">
                 <div class="icon">
-                  <i class="fa-solid fa-user"></i>
+                  <i class="fa-solid fa-user ra_icon2"></i>
                 </div>
                 <div class="txt">
                   <h4>Create account</h4>
@@ -383,13 +424,13 @@
             </div>
             <div class="col-lg-1" data-aos="fade-right">
               <div class="ra" data-aos="fade-right" data-aos-delay="80">
-                <img src="images/right-arrow.png" alt="" />
+                <img src="images/next.png" alt="" />
               </div>
             </div>
             <div class="col-lg-3">
               <div class="u_card" data-aos="fade-right" data-aos-delay="90">
                 <div class="icon">
-                  <i class="fa-solid fa-book-bookmark"></i>
+                  <i class="fa-solid fa-book-bookmark ra_icon3"></i>
                 </div>
                 <div class="txt">
                   <h4>Browse courses</h4>
@@ -422,11 +463,14 @@
                   data-aos-duration="1000"
                 >
                   <div class="icon">
-                    <i class="fa-brands fa-tiktok"></i>
+                    <img src="images/personalized.png" alt="" />
                   </div>
                   <div class="txt">
                     <h3>Personalized Experience</h3>
-                    <p>Targeted users here are learners of all age groups.</p>
+                    <p>
+                      In elearning, interactive content is learning material
+                      that involve
+                    </p>
                   </div>
                 </div>
                 <div
@@ -436,7 +480,7 @@
                   data-aos-duration="1000"
                 >
                   <div class="icon">
-                    <i class="fa-brands fa-tiktok"></i>
+                    <img src="images/tutorial.png" alt="" />
                   </div>
                   <div class="txt">
                     <h3>Live Tutorials</h3>
@@ -453,13 +497,13 @@
                   data-aos-duration="1000"
                 >
                   <div class="icon">
-                    <i class="fa-brands fa-tiktok"></i>
+                    <img src="images/interactive-content.png" alt="" />
                   </div>
                   <div class="txt">
                     <h3>Interactive Content</h3>
                     <p>
                       In elearning, interactive content is learning material
-                      that involves
+                      that involves that involves
                     </p>
                   </div>
                 </div>
@@ -484,11 +528,14 @@
                   data-aos-duration="1000"
                 >
                   <div class="icon">
-                    <i class="fa-brands fa-tiktok"></i>
+                    <img src="images/ux-design.png" alt="" />
                   </div>
                   <div class="txt">
                     <h3>Excellent UX/UI</h3>
-                    <p>Our Students are Mentored so well that We take Pride</p>
+                    <p>
+                      In elearning, interactive content is learning material
+                      that involve
+                    </p>
                   </div>
                 </div>
                 <div
@@ -498,7 +545,7 @@
                   data-aos-duration="1000"
                 >
                   <div class="icon">
-                    <i class="fa-brands fa-tiktok"></i>
+                    <img src="images/certification.png" alt="" />
                   </div>
                   <div class="txt">
                     <h3>Certification</h3>
@@ -514,7 +561,7 @@
                   data-aos-duration="1000"
                 >
                   <div class="icon">
-                    <i class="fa-brands fa-tiktok"></i>
+                    <img src="images/content.png" alt="" />
                   </div>
                   <div class="txt">
                     <h3>Video-based Content</h3>
@@ -536,202 +583,148 @@
           <h2>Why <span>Us ?</span></h2>
           <hr />
         </div>
-        <div class="main">
-          <div class="row">
-            <div class="col-lg-4">
-              <div class="card" data-aos="flip-right">
-                <div class="sneaker">
-                  <img
-                    class="c-img"
-                    src="images/slaider (2).png"
-                    alt="png img"
-                  />
+        <main class="main">
+          <section class="card-area">
+            <!-- Best Performance-->
+            <section class="card-section">
+              <div class="card">
+                <div class="flip-card">
+                  <div class="flip-card__container">
+                    <div class="card-front">
+                      <div class="card-front__tp card-front__tp--city">
+                        <img src="images/card_icon1.png" alt="" />
+
+                        <h2 class="card-front__heading">Best Performance</h2>
+                      </div>
+
+                      <div class="card-front__bt">
+                        <p
+                          class="card-front__text-view card-front__text-view--city"
+                        >
+                          See More
+                        </p>
+                      </div>
+                    </div>
+                    <div class="card-back">
+                      <video class="video__container" autoplay muted loop>
+                        <source
+                          class="video__media"
+                          src="videos/why_us1.mp4"
+                          type="video/mp4"
+                        />
+                      </video>
+                    </div>
+                  </div>
                 </div>
-                <div class="info">
-                  <h1 class="title">card title</h1>
-                  <p>
-                    Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-                    Ipsum quis saepe rerum velit hic doloremque!
-                  </p>
-                </div>
-              </div>
-            </div>
-            <div class="col-lg-4">
-              <div class="card" data-aos="flip-left">
-                <div class="sneaker">
-                  <img
-                    class="c-img"
-                    src="images/slaider (2).png"
-                    alt="png img"
-                  />
-                </div>
-                <div class="info">
-                  <h1 class="title">card title</h1>
-                  <p>
-                    Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-                    Ipsum quis saepe rerum velit hic doloremque!
-                  </p>
-                </div>
-              </div>
-            </div>
-            <div class="col-lg-4">
-              <div class="card" data-aos="flip-right">
-                <div class="sneaker">
-                  <img
-                    class="c-img"
-                    src="images/slaider (2).png"
-                    alt="png img"
-                  />
-                </div>
-                <div class="info">
-                  <h1 class="title">card title</h1>
-                  <p>
-                    Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-                    Ipsum quis saepe rerum velit hic doloremque!
-                  </p>
+
+                <div class="inside-page">
+                  <div class="inside-page__container">
+                    <h3 class="inside-page__heading inside-page__heading--city">
+                      Best Performance
+                    </h3>
+                    <p class="inside-page__text">
+                      A performance review is a regulated assessment in which
+                      managers evaluate
+                    </p>
+                    <a href="#" class="inside-page__btn inside-page__btn--city"
+                      >View deals</a
+                    >
+                  </div>
                 </div>
               </div>
-            </div>
-          </div>
-        </div>
-        <div class="owl-carousel">
-          <div class="card">
-            <div class="salid">
-              <div class="s">
-                <img src="images/slaider (2).png" alt="" />
-                <i class="fa-solid fa-quote-right"></i>
+              <div class="card">
+                <div class="flip-card">
+                  <div class="flip-card__container">
+                    <div class="card-front">
+                      <div class="card-front__tp card-front__tp--city">
+                        <img src="images/card_icon2.png" alt="" />
+
+                        <h2 class="card-front__heading">Hybrid Learning</h2>
+                      </div>
+
+                      <div class="card-front__bt">
+                        <p
+                          class="card-front__text-view card-front__text-view--city"
+                        >
+                          See More
+                        </p>
+                      </div>
+                    </div>
+                    <div class="card-back">
+                      <video class="video__container" autoplay muted loop>
+                        <source
+                          class="video__media"
+                          src="videos/why_us2.mp4"
+                          type="video/mp4"
+                        />
+                      </video>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="inside-page">
+                  <div class="inside-page__container">
+                    <h3 class="inside-page__heading inside-page__heading--city">
+                      Hybrid Learning
+                    </h3>
+                    <p class="inside-page__text">
+                      A performance review is a regulated assessment in which
+                      managers evaluate
+                    </p>
+                    <a href="#" class="inside-page__btn inside-page__btn--city"
+                      >View deals</a
+                    >
+                  </div>
+                </div>
               </div>
-              <div class="s1">
-                <h2>স্কিলড হওয়া যায় যখন তখন</h2>
-                <p>
-                  প্রথাগতভাবে আমরা স্কুল-কলেজে গিয়ে আমাদের শিক্ষা গ্রহন করি।
-                  কিন্তু অনলাইন মাধ্যমের কল্যানে এখন সহজেই যেকোন সময়ে যেকোনো
-                  স্থান থেকে শুধুমাত্র ইলেকট্রনিক ডিভাইস ব্যবহারের মাধ্যমে
-                  আমাদের দক্ষ হয়ে উঠার
-                </p>
+              <div class="card">
+                <div class="flip-card">
+                  <div class="flip-card__container">
+                    <div class="card-front">
+                      <div class="card-front__tp card-front__tp--city">
+                        <img src="images/card_icon3.png" alt="" />
+
+                        <h2 class="card-front__heading">Certifications</h2>
+                      </div>
+
+                      <div class="card-front__bt">
+                        <p
+                          class="card-front__text-view card-front__text-view--city"
+                        >
+                          See More
+                        </p>
+                      </div>
+                    </div>
+                    <div class="card-back">
+                      <video class="video__container" autoplay muted loop>
+                        <source
+                          class="video__media"
+                          src="videos/why_us3.mp4"
+                          type="video/mp4"
+                        />
+                      </video>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="inside-page">
+                  <div class="inside-page__container">
+                    <h3 class="inside-page__heading inside-page__heading--city">
+                      Certifications
+                    </h3>
+                    <p class="inside-page__text">
+                      A performance review is a regulated assessment in which
+                      managers evaluate
+                    </p>
+                    <a href="#" class="inside-page__btn inside-page__btn--city"
+                      >View deals</a
+                    >
+                  </div>
+                </div>
               </div>
-            </div>
-          </div>
-          <div class="card">
-            <div class="salid">
-              <div class="s">
-                <img src="images/slaider (2).png" alt="" />
-                <i class="fa-solid fa-quote-right"></i>
-              </div>
-              <div class="s1">
-                <h2>স্কিলড হওয়া যায় যখন তখন</h2>
-                <p>
-                  প্রথাগতভাবে আমরা স্কুল-কলেজে গিয়ে আমাদের শিক্ষা গ্রহন করি।
-                  কিন্তু অনলাইন মাধ্যমের কল্যানে এখন সহজেই যেকোন সময়ে যেকোনো
-                  স্থান থেকে শুধুমাত্র ইলেকট্রনিক ডিভাইস ব্যবহারের মাধ্যমে
-                  আমাদের দক্ষ হয়ে উঠার
-                </p>
-              </div>
-            </div>
-          </div>
-          <div class="card">
-            <div class="salid">
-              <div class="s">
-                <img src="images/slaider (2).png" alt="" />
-                <i class="fa-solid fa-quote-right"></i>
-              </div>
-              <div class="s1">
-                <h2>স্কিলড হওয়া যায় যখন তখন</h2>
-                <p>
-                  প্রথাগতভাবে আমরা স্কুল-কলেজে গিয়ে আমাদের শিক্ষা গ্রহন করি।
-                  কিন্তু অনলাইন মাধ্যমের কল্যানে এখন সহজেই যেকোন সময়ে যেকোনো
-                  স্থান থেকে শুধুমাত্র ইলেকট্রনিক ডিভাইস ব্যবহারের মাধ্যমে
-                  আমাদের দক্ষ হয়ে উঠার
-                </p>
-              </div>
-            </div>
-          </div>
-          <div class="card">
-            <div class="salid">
-              <div class="s">
-                <img src="images/slaider (2).png" alt="" />
-                <i class="fa-solid fa-quote-right"></i>
-              </div>
-              <div class="s1">
-                <h2>স্কিলড হওয়া যায় যখন তখন</h2>
-                <p>
-                  প্রথাগতভাবে আমরা স্কুল-কলেজে গিয়ে আমাদের শিক্ষা গ্রহন করি।
-                  কিন্তু অনলাইন মাধ্যমের কল্যানে এখন সহজেই যেকোন সময়ে যেকোনো
-                  স্থান থেকে শুধুমাত্র ইলেকট্রনিক ডিভাইস ব্যবহারের মাধ্যমে
-                  আমাদের দক্ষ হয়ে উঠার
-                </p>
-              </div>
-            </div>
-          </div>
-          <div class="card">
-            <div class="salid">
-              <div class="s">
-                <img src="images/slaider (2).png" alt="" />
-                <i class="fa-solid fa-quote-right"></i>
-              </div>
-              <div class="s1">
-                <h2>স্কিলড হওয়া যায় যখন তখন</h2>
-                <p>
-                  প্রথাগতভাবে আমরা স্কুল-কলেজে গিয়ে আমাদের শিক্ষা গ্রহন করি।
-                  কিন্তু অনলাইন মাধ্যমের কল্যানে এখন সহজেই যেকোন সময়ে যেকোনো
-                  স্থান থেকে শুধুমাত্র ইলেকট্রনিক ডিভাইস ব্যবহারের মাধ্যমে
-                  আমাদের দক্ষ হয়ে উঠার
-                </p>
-              </div>
-            </div>
-          </div>
-          <div class="card">
-            <div class="salid">
-              <div class="s">
-                <img src="images/slaider (2).png" alt="" />
-                <i class="fa-solid fa-quote-right"></i>
-              </div>
-              <div class="s1">
-                <h2>স্কিলড হওয়া যায় যখন তখন</h2>
-                <p>
-                  প্রথাগতভাবে আমরা স্কুল-কলেজে গিয়ে আমাদের শিক্ষা গ্রহন করি।
-                  কিন্তু অনলাইন মাধ্যমের কল্যানে এখন সহজেই যেকোন সময়ে যেকোনো
-                  স্থান থেকে শুধুমাত্র ইলেকট্রনিক ডিভাইস ব্যবহারের মাধ্যমে
-                  আমাদের দক্ষ হয়ে উঠার
-                </p>
-              </div>
-            </div>
-          </div>
-          <div class="card">
-            <div class="salid">
-              <div class="s">
-                <img src="images/slaider (2).png" alt="" />
-                <i class="fa-solid fa-quote-right"></i>
-              </div>
-              <div class="s1">
-                <h2>স্কিলড হওয়া যায় যখন তখন</h2>
-                <p>
-                  প্রথাগতভাবে আমরা স্কুল-কলেজে গিয়ে আমাদের শিক্ষা গ্রহন করি।
-                  কিন্তু অনলাইন মাধ্যমের কল্যানে এখন সহজেই যেকোন সময়ে যেকোনো
-                  স্থান থেকে শুধুমাত্র ইলেকট্রনিক ডিভাইস ব্যবহারের মাধ্যমে
-                  আমাদের দক্ষ হয়ে উঠার
-                </p>
-              </div>
-            </div>
-          </div>
-          <div class="card">
-            <div class="salid">
-              <div class="s">
-                <img src="images/slaider (2).png" alt="" />
-                <i class="fa-solid fa-quote-right"></i>
-              </div>
-              <div class="s1">
-                <h2>স্কিলড হওয়া যায় যখন তখন</h2>
-                <p>
-                  প্রথাগতভাবে আমরা স্কুল-কলেজে গিয়ে আমাদের শিক্ষা গ্রহন করি।
-                  কিন্তু অনলাইন মাধ্যমের কল্যানে এখন সহজেই যেকোন সময়ে যেকোনো
-                  স্থান থেকে শুধুমাত্র ইলেকট্রনিক ডিভাইস ব্যবহারের মাধ্যমে
-                  আমাদের দক্ষ হয়ে উঠার
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
+            </section>
+          </section>
+        </main>
       </div>
     </section>
 
@@ -742,7 +735,6 @@
       integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ="
       crossorigin="anonymous"
     ></script>
-    <script src="js/owl.carousel.min.js"></script>
     <!-- jq -->
 
     <script src="js/typed.min.js"></script>

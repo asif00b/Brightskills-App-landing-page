@@ -1,9 +1,15 @@
 /* color var */
 :root {
-  --c1: #df6812;
-  --c2: #f39200;
+  --c1: #ff4d00;
+  --c2: #ff601c;
   --c3: #232222;
   --c4: #575757;
+  --c5: #ff6e56;
+  --sect_bg: #fae3e1;
+  --fuschia: #ff4d00;
+
+  --button-text-color: #fff;
+  --baby-blue: #f8faff;
 }
 /* #5F0000
 #DFE0DF */
@@ -60,14 +66,15 @@ body {
 /* navbar */
 nav {
   position: absolute;
+  top: 30px;
   width: 100%;
-  z-index: 9999;
-  overflow-x: hidden;
+  z-index: 10;
+
   /* box-shadow: 0 -1px 4px 1px #232222; */
 }
 .sticky {
   position: fixed;
-  padding: 10px 0;
+  padding: 15px 0;
   top: 0;
   background: #fdfdfd;
   box-shadow: 0px 1px 4px 0px rgb(0 0 0 / 65%);
@@ -78,7 +85,7 @@ nav {
   -o-transition: 0.4s;
 }
 .logo img {
-  width: 65%;
+  width: 100%;
 }
 .menu i {
   display: none;
@@ -125,6 +132,156 @@ nav {
   width: 100%;
   box-shadow: 0px -14px 20px 7px white;
 }
+nav .n_btn .nav_btn {
+  font-size: 1rem;
+  font-weight: 700;
+  padding: 10px 25px;
+  -webkit-appearance: none;
+  appearance: none;
+  background: var(--fuschia);
+  color: #fff;
+  border-radius: 25px;
+  border: none;
+  cursor: pointer;
+  position: relative;
+  transition: transform ease-in 0.1s, box-shadow ease-in 0.25s;
+  box-shadow: 2px 3px 3px 0px rgb(0 0 0 / 65%);
+  -webkit-transition: transform ease-in 0.1s, box-shadow ease-in 0.25s;
+  -moz-transition: transform ease-in 0.1s, box-shadow ease-in 0.25s;
+  -ms-transition: transform ease-in 0.1s, box-shadow ease-in 0.25s;
+  -o-transition: transform ease-in 0.1s, box-shadow ease-in 0.25s;
+  -webkit-border-radius: 25px;
+  -moz-border-radius: 25px;
+  -ms-border-radius: 25px;
+  -o-border-radius: 25px;
+  animation: hero-btn 2s ease infinite;
+  -webkit-animation: nav-btn 2s ease infinite;
+}
+@keyframes nav-btn {
+  0% {
+    transform: scale(1);
+    -webkit-transform: scale(1);
+    -moz-transform: scale(1);
+    -ms-transform: scale(1);
+    -o-transform: scale(1);
+  }
+  50% {
+    transform: scale(0.98);
+    -webkit-transform: scale(0.98);
+    -moz-transform: scale(0.98);
+    -ms-transform: scale(0.98);
+    -o-transform: scale(0.98);
+  }
+  100% {
+    transform: scale(1);
+    -webkit-transform: scale(1);
+    -moz-transform: scale(1);
+    -ms-transform: scale(1);
+    -o-transform: scale(1);
+  }
+}
+nav .n_btn .nav_btn:focus {
+  outline: 0;
+}
+nav .n_btn .nav_btn:before,
+nav .n_btn .nav_btn:after {
+  position: absolute;
+  content: "";
+  display: block;
+  width: 140%;
+  height: 100%;
+  left: -20%;
+  z-index: -1000;
+  transition: all ease-in-out 0.5s;
+  background-repeat: no-repeat;
+}
+nav .n_btn .nav_btn:before {
+  display: none;
+  top: -75%;
+  background-image: radial-gradient(circle, var(--fuschia) 20%, transparent 20%),
+    radial-gradient(
+      circle,
+      transparent 20%,
+      var(--fuschia) 20%,
+      transparent 30%
+    ),
+    radial-gradient(circle, var(--fuschia) 20%, transparent 20%),
+    radial-gradient(circle, var(--fuschia) 20%, transparent 20%),
+    radial-gradient(
+      circle,
+      transparent 10%,
+      var(--fuschia) 15%,
+      transparent 20%
+    ),
+    radial-gradient(circle, var(--fuschia) 20%, transparent 20%),
+    radial-gradient(circle, var(--fuschia) 20%, transparent 20%),
+    radial-gradient(circle, var(--fuschia) 20%, transparent 20%),
+    radial-gradient(circle, var(--fuschia) 20%, transparent 20%);
+  background-size: 10% 10%, 20% 20%, 15% 15%, 20% 20%, 18% 18%, 10% 10%, 15% 15%,
+    10% 10%, 18% 18%;
+}
+nav .n_btn .nav_btn:after {
+  display: none;
+  bottom: -75%;
+  background-image: radial-gradient(circle, var(--fuschia) 20%, transparent 20%),
+    radial-gradient(circle, var(--fuschia) 20%, transparent 20%),
+    radial-gradient(
+      circle,
+      transparent 10%,
+      var(--fuschia) 15%,
+      transparent 20%
+    ),
+    radial-gradient(circle, var(--fuschia) 20%, transparent 20%),
+    radial-gradient(circle, var(--fuschia) 20%, transparent 20%),
+    radial-gradient(circle, var(--fuschia) 20%, transparent 20%),
+    radial-gradient(circle, var(--fuschia) 20%, transparent 20%);
+  background-size: 15% 15%, 20% 20%, 18% 18%, 20% 20%, 15% 15%, 10% 10%, 20% 20%;
+}
+nav .n_btn .nav_btn:active {
+  transform: scale(0.9);
+  background-color: var(--fuschia);
+  box-shadow: 0 2px 25px rgba(255, 0, 130, 0.2);
+}
+
+nav .n_btn .nav_btn.animate:before {
+  display: block;
+  animation: topBubbles ease-in-out 0.75s forwards;
+}
+nav .n_btn .nav_btn.animate:after {
+  display: block;
+  animation: bottomBubbles ease-in-out 0.75s forwards;
+}
+
+@keyframes topBubbles {
+  0% {
+    background-position: 5% 90%, 10% 90%, 10% 90%, 15% 90%, 25% 90%, 25% 90%,
+      40% 90%, 55% 90%, 70% 90%;
+  }
+  50% {
+    background-position: 0% 80%, 0% 20%, 10% 40%, 20% 0%, 30% 30%, 22% 50%,
+      50% 50%, 65% 20%, 90% 30%;
+  }
+  100% {
+    background-position: 0% 70%, 0% 10%, 10% 30%, 20% -10%, 30% 20%, 22% 40%,
+      50% 40%, 65% 10%, 90% 20%;
+    background-size: 0% 0%, 0% 0%, 0% 0%, 0% 0%, 0% 0%, 0% 0%;
+  }
+}
+@keyframes bottomBubbles {
+  0% {
+    background-position: 10% -10%, 30% 10%, 55% -10%, 70% -10%, 85% -10%,
+      70% -10%, 70% 0%;
+  }
+  50% {
+    background-position: 0% 80%, 20% 80%, 45% 60%, 60% 100%, 75% 70%, 95% 60%,
+      105% 0%;
+  }
+  100% {
+    background-position: 0% 90%, 20% 90%, 45% 70%, 60% 110%, 75% 80%, 95% 70%,
+      110% 10%;
+    background-size: 0% 0%, 0% 0%, 0% 0%, 0% 0%, 0% 0%, 0% 0%;
+  }
+}
 
 /* banner */
 #hero_section {
@@ -133,18 +290,23 @@ nav {
   padding: 4% 0;
   background: #ffe5d2;
   position: relative;
-  overflow-y: hidden;
+  overflow: hidden;
 }
 #particleJs {
   width: 100%;
   height: 100vh;
+}
+#hero_section svg {
+  width: 100%;
+  height: 100vh;
+  margin-top: 30px;
 }
 
 #hero_section .pm {
   position: absolute;
   width: 465px;
   height: 380px;
-  padding: 10px;
+  padding: 15px;
   background: rgba(223, 104, 18, 0.5);
   box-shadow: -11px 20px 32px 9px rgb(223 104 18 / 44%);
   backdrop-filter: blur(3px);
@@ -155,11 +317,12 @@ nav {
   transform: translate(140%, -58%) scale(0);
   z-index: 2;
   transition: all 0.5s;
-  animation: pm 1.5s cubic-bezier(0.4, 0, 1, 1) 2s forwards;
+  animation: pm 1.5s cubic-bezier(0.4, 0, 1, 1) 5s forwards;
+  -webkit-animation: pm 1.5s cubic-bezier(0.4, 0, 1, 1) 5s forwards;
 }
 @keyframes pm {
   100% {
-    transform: translate(10%, -45%);
+    transform: translate(10%, -40%);
     z-index: 4;
   }
 }
@@ -172,6 +335,7 @@ nav {
   top: 60%;
   right: 40%;
   background: rgba(223, 104, 18, 0.5);
+  z-index: -1;
 }
 #hero_section .pm::after {
   content: "";
@@ -183,6 +347,10 @@ nav {
   left: 70%;
   background: rgba(223, 104, 18, 0.5);
   z-index: -1;
+  -webkit-border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+  -moz-border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+  -ms-border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+  -o-border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
 }
 #hero_section .pm::after,
 ::before {
@@ -201,14 +369,20 @@ nav {
   }
 }
 #hero_section .pm img {
+  width: 50%;
   position: absolute;
   top: 50%;
   left: -9%;
   transform: translateY(-50%);
 }
 #hero_section .pm .hero {
-  width: 60%;
+  width: 63%;
   margin-left: auto;
+}
+#hero_section .pm .hero .txt {
+  position: absolute;
+  bottom: 40px;
+  z-index: 999;
 }
 #hero_section .pm h1 {
   text-align: left;
@@ -222,91 +396,106 @@ nav {
   font-size: 0.8rem;
   font-weight: 500;
   padding: 0 10px;
-  position: absolute;
-  bottom: 24%;
   color: #ffffff;
 }
-#hero_section .pm .hero a {
-  position: absolute;
-  bottom: 14%;
-  left: 45%;
-  font-size: 1rem;
-  font-weight: 700;
-  color: #ffffff;
+#hero_section .pm .hero .hero_btn {
+  text-align: center;
+  display: inline-block;
+  position: relative;
+  text-decoration: none;
+  color: #fff;
+  text-transform: capitalize;
   background: var(--c1);
-  padding: 10px 30px;
-  border-radius: 5px;
-  z-index: 1;
-  box-shadow: 2px 3px 3px 0px rgb(0 0 0 / 65%);
+  font-size: 18px;
+  padding: 8px 0px;
+  margin-left: 10px;
+  width: 150px;
+  border-radius: 6px;
+  overflow: hidden;
+  cursor: pointer;
 }
-#hero_section .pm .hero a::after {
-  content: "";
-  width: 0;
-  height: 0;
+#hero_section .pm .hero .effect-2 {
+  transition: all 0.2s ease 0s;
+  -webkit-transition: all 0.2s ease 0s;
+  -moz-transition: all 0.2s ease 0s;
+  -ms-transition: all 0.2s ease 0s;
+  -o-transition: all 0.2s ease 0s;
+}
+#hero_section .pm .hero .effect-2:before {
+  content: "";
+  font-family: FontAwesome;
+  font-size: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  background: linear-gradient(
-    15deg,
-    #df6812,
-    #e5720e,
-    #ea7d09,
-    #ef8704,
-    #f39200
-  );
-  transition: 0.4s;
-  border-radius: 5px;
-  z-index: -1;
-}
-#hero_section .pm .hero a:hover::after {
-  width: 100%;
+  top: 0;
+  right: -40px;
+  width: 30px;
   height: 100%;
+  background-color: #ffffff57;
+  border-radius: 0px 6px 6px 0px;
+  transition: all 0.2s ease 0s;
+  text-align: center;
+  -webkit-transition: all 0.2s ease 0s;
+  -moz-transition: all 0.2s ease 0s;
+  -ms-transition: all 0.2s ease 0s;
+  -o-transition: all 0.2s ease 0s;
+  animation: none;
+  -webkit-animation: none;
 }
+#hero_section .pm .hero .effect-2:hover {
+  text-indent: -30px;
+}
+#hero_section .pm .hero .effect-2:hover:before {
+  right: 0;
+  text-indent: 0px;
+}
+
 #hero_section .side_img {
   display: none;
 }
 #hero_section .background {
   width: 100%;
-  height: 100vh;
+  /* height: 100vh; */
   position: absolute;
   top: 0;
   left: 0;
   z-index: 2;
   overflow: hidden;
 }
-#hero_section .heroV {
+
+#hero_section .heroV img {
+  width: 300px;
   position: absolute;
   bottom: -100%;
   right: 25px;
   z-index: 6;
+  overflow: hidden;
   animation: heroV 2s ease-out 3s forwards;
 }
 @keyframes heroV {
   100% {
-    bottom: 9%;
+    bottom: 0;
   }
 }
-#hero_section .heroV img {
+/* #hero_section .heroV img {
   width: 80%;
-}
+} */
 
 /* animation */
-#hero_section .svg {
-  vertical-align: middle;
+/* #hero_section svg {
   width: 100%;
-}
-#hero_section svg {
-  width: 100%;
-  height: 100%;
-}
+} */
+
 #hero_section svg #p1 {
   transform: rotate(-9deg) skew(-9deg, 34deg) translate(-23px, -45px)
     scale(1.035, 1.08);
   transform-origin: center;
   transform-box: fill-box;
   transition: 0.9s;
-  animation: p1 0.9s ease-in-out 2s forwards;
+  animation: p1 0.9s ease-in-out 5s forwards;
+  -webkit-animation: p1 0.9s ease-in-out 5s forwards;
 }
 #hero_section .background .cover {
   width: 387px;
@@ -321,7 +510,8 @@ nav {
   opacity: 0.8;
   transform: rotate(-9deg) skew(-9deg, 34deg) translate(-23px, -37px)
     scale(1, 1.05);
-  animation: p1 0.9s ease-in-out 2s forwards;
+  animation: p1 0.9s ease-in-out 5s forwards;
+  -webkit-animation: p1 0.9s ease-in-out 5s forwards;
 }
 @keyframes p1 {
   100% {
@@ -336,7 +526,8 @@ nav {
   transform-origin: center;
   transform-box: fill-box;
   transition: 0.8s;
-  animation: p2 0.9s ease-in-out 2.2s forwards;
+  animation: p2 0.9s ease-in-out 5.2s forwards;
+  -webkit-animation: p2 0.9s ease-in-out 5.2s forwards;
 }
 @keyframes p2 {
   100% {
@@ -352,7 +543,8 @@ nav {
   transform-origin: center;
   transform-box: fill-box;
   transition: 0.7s;
-  animation: p3 0.9s ease-in-out 2.4s forwards;
+  animation: p3 0.9s ease-in-out 5.4s forwards;
+  -webkit-animation: p3 0.9s ease-in-out 5.4s forwards;
 }
 @keyframes p3 {
   100% {
@@ -368,7 +560,8 @@ nav {
   transform-origin: center;
   transform-box: fill-box;
   transition: 0.6s;
-  animation: p4 0.9s ease-in-out 2.6s forwards;
+  animation: p4 0.9s ease-in-out 5.6s forwards;
+  -webkit-animation: p4 0.9s ease-in-out 5.6s forwards;
 }
 @keyframes p4 {
   100% {
@@ -383,7 +576,8 @@ nav {
   transform-origin: center;
   transform-box: fill-box;
   transition: 0.5s;
-  animation: p5 0.9s ease-in-out 2.8s forwards;
+  animation: p5 0.9s ease-in-out 5.8s forwards;
+  -webkit-animation: p5 0.9s ease-in-out 5.8s forwards;
 }
 @keyframes p5 {
   100% {
@@ -398,7 +592,8 @@ nav {
   transform-box: fill-box;
   transform: skewX(41deg) translate(119px, 68px) scale(0.9, 2);
   transition: 0.8s;
-  animation: shaddow 1.5s ease 2s forwards;
+  animation: shaddow 1.5s ease 5s forwards;
+  -webkit-animation: shaddow 1.5s ease 5s forwards;
 }
 
 @keyframes shaddow {
@@ -417,8 +612,8 @@ nav {
   transform-box: fill-box;
   transform: rotate3d(-1, 0, 1, -39deg) rotateY(176deg) translate(-14px, 4px);
   transition: 0.5s ease-in-out;
-  animation: head 0.5s ease 3s forwards;
-  -webkit-animation: head 0.5s ease 3s forwards;
+  animation: head 0.5s ease 8s forwards;
+  -webkit-animation: head 0.5s ease 6s forwards;
 }
 @keyframes head {
   100% {
@@ -499,32 +694,34 @@ nav {
 } */
 #usage {
   padding: 5% 0;
-  background-image: linear-gradient(
-    to right,
-    rgba(223, 104, 18, 0.8),
-    rgba(227, 110, 15, 0.8)
-  );
-}
-#usage .title h2 {
-  color: #fff;
-}
-#usage .title h2 span {
-  color: #fff;
+  background: var(--sect_bg);
 }
 #usage .main .u_card {
   text-align: center;
-  color: #fdfdfd;
+  color: var(--c3);
 }
 #usage .main .u_card .icon i {
   font-size: 5em;
 }
+#usage .main .u_card .icon .ra_icon1 {
+  color: #f39200;
+}
+#usage .main .u_card .icon .ra_icon2 {
+  color: #21b8fe;
+}
+#usage .main .u_card .icon .ra_icon3 {
+  color: #eb5468;
+}
 #usage .main .u_card .txt h4 {
   font-size: 3em;
+  font-weight: 600;
   margin: 15px 0;
 }
 #usage .main .u_card .txt p {
   font-size: 1.5em;
+  font-weight: 500;
   text-align: justify;
+  color: var(--c4);
 }
 #usage .main .ra {
   height: 100%;
@@ -532,12 +729,14 @@ nav {
   align-items: center;
   justify-content: center;
 }
+#usage .main .ra img {
+  width: 100%;
+}
 
 /* feature */
 
 #features {
-  padding: 5% 0 0;
-  height: 100vh;
+  padding: 2% 0 0;
   overflow: hidden;
 }
 #features .main .left_features .feature {
@@ -548,61 +747,69 @@ nav {
   margin-bottom: 30px;
 }
 #features .main .left_features {
-  height: 60vh;
+  /* height: 60vh; */
   display: flex;
   flex-direction: column;
   justify-content: space-between;
 }
 #features .main .feature {
-  margin-bottom: 40px;
+  background: rgba(255, 255, 255, 0.05);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(3px);
+  -webkit-backdrop-filter: blur(3px);
+  border-radius: 10px;
+  margin-bottom: 30px;
+  padding: 10px;
 }
 #features .main .left_features .feature:nth-child(1) {
-  width: 94%;
+  width: 100%;
+  margin-right: 10px;
 }
 #features .main .left_features .feature:nth-child(2) {
-  width: 80%;
+  width: 85%;
 }
 #features .main .left_features .feature:nth-child(3) {
-  width: 85%;
+  width: 100%;
 }
 #features .main .right_features .feature:nth-child(1) {
   width: 94%;
   margin-left: auto;
 }
 #features .main .right_features .feature:nth-child(2) {
-  width: 82%;
+  width: 85%;
   margin-left: auto;
 }
 #features .main .right_features .feature:nth-child(3) {
-  width: 88%;
+  margin-left: 20px;
+}
+#features .main .left_features .feature .icon {
+  width: 50px;
   margin-left: auto;
 }
-#features .main .icon i {
-  font-size: 3.5em;
+#features .main .feature .icon img {
+  width: 100%;
+}
+#features .main .right_features .feature .icon {
+  width: 50px;
+  margin-right: auto;
 }
 #features .main .txt h3 {
-  font-size: 3em;
-  font-weight: 600;
+  font-size: 2em;
+  font-weight: 500;
+  text-transform: uppercase;
   color: var(--c1);
 }
 #features .main .txt p {
-  font-size: 1.8em;
+  font-size: 1.5em;
   color: var(--c4);
   line-height: 25px;
   margin-bottom: 0;
+  margin-top: 5px !important;
 }
-.f_mockup img {
+#features .f_mockup img {
   width: 100%;
-  position: absolute;
-  top: 100vh;
-  animation: p_mock 2s ease forwards;
-  -webkit-animation: p_mock 2s ease forwards;
 }
-@keyframes p_mock {
-  100% {
-    top: 0;
-  }
-}
+
 .f_mockup {
   position: relative;
 }
@@ -649,7 +856,7 @@ nav {
 /* why-us */
 #why_us {
   padding: 5% 0 2%;
-  background: #e5720e;
+  background: var(--c5);
 }
 #why_us .title {
   margin-bottom: 20px;
@@ -660,123 +867,280 @@ nav {
 #why_us .title h2 span {
   color: #fff;
 }
-#why_us .main {
-  margin-bottom: 30px;
+/* Main heading for card's front cover */
+#why_us .card-front__heading {
+  font-size: 1.5rem;
+  margin-top: 0.25rem;
 }
-#why_us .main .card {
-  transform-style: preserve-3d;
-  height: 260px;
-  width: 350px;
-  border-radius: 30px;
-  padding: 20px 30px;
-  box-shadow: 0 6px 8px rgb(0, 0, 0);
-}
-#why_us .main .sneaker {
+
+/* Main heading for inside page */
+#why_us .inside-page__heading {
+  padding-bottom: 1rem;
   width: 100%;
+}
+
+/* Mixed */
+
+/* For both inside page's main heading and 'view me' text on card front cover */
+#why_us .inside-page__heading,
+.card-front__text-view {
+  font-size: 1.3rem;
+  font-weight: 800;
+  margin-top: 0.2rem;
+}
+
+#why_us .inside-page__heading--city,
+.card-front__text-view--city {
+  color: var(--c1);
+}
+
+/* Front cover */
+
+#why_us .card-front__tp {
+  color: #fafbfa;
+}
+
+/* For pricing text on card front cover */
+#why_us .card-front__text-price {
+  font-size: 1.2rem;
+  margin-top: -0.2rem;
+}
+
+/* Back cover */
+
+/* For inside page's body text */
+#why_us .inside-page__text {
+  color: #333;
+}
+
+/* Icons ===========================================*/
+
+#why_us .card-front__icon {
+  fill: #fafbfa;
+  font-size: 3vw;
+  height: 3.25rem;
+  margin-top: -0.5rem;
+  width: 3.25rem;
+}
+
+/* Buttons =================================================*/
+
+#why_us .inside-page__btn {
+  background-color: transparent;
+  border: 3px solid;
+  border-radius: 0.5rem;
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-top: 2rem;
+  overflow: hidden;
+  padding: 0.7rem 0.75rem;
+  position: relative;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  width: 90%;
+  z-index: 10;
+}
+
+#why_us .inside-page__btn::before {
+  content: "";
+  height: 100%;
+  left: 0;
+  position: absolute;
+  top: 0;
+  transform: scaleY(0);
+  transition: all 0.3s ease;
+  width: 100%;
+  z-index: -1;
+  animation: none;
+  -webkit-animation: none;
+}
+
+#why_us .inside-page__btn--city {
+  border-color: var(--fuschia);
+  color: var(--fuschia);
+}
+
+#why_us .inside-page__btn--city::before {
+  background-color: var(--fuschia);
+}
+
+#why_us .inside-page__btn:hover {
+  color: #fafbfa;
+}
+
+#why_us .inside-page__btn:hover::before {
+  transform: scaleY(1);
+  -webkit-transform: scaleY(1);
+  -moz-transform: scaleY(1);
+  -ms-transform: scaleY(1);
+  -o-transform: scaleY(1);
+}
+
+/* Layout Structure=========================================*/
+
+#why_us .main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+}
+
+/* Container to hold all cards in one place */
+#why_us .card-area {
+  align-items: center;
+  display: flex;
+  flex-wrap: nowrap;
+  height: 100%;
+  justify-content: space-evenly;
+  padding: 1rem;
+}
+
+/* Card ============================================*/
+
+/* Area to hold an individual card */
+#why_us .card-section {
+  align-items: center;
+  display: flex;
+  height: 100%;
+  justify-content: space-evenly;
+  width: 100%;
+}
+
+/* A container to hold the flip card and the inside page */
+#why_us .card {
+  background-color: rgba(0, 0, 0, 0.05);
+  box-shadow: -0.1rem 1.7rem 6.6rem -3.2rem rgba(0, 0, 0, 0.5);
+  height: 15rem;
+  position: relative;
+  transition: all 1s ease;
+  width: 15rem;
+}
+
+/* Flip card - covering both the front and inside front page */
+
+/* An outer container to hold the flip card. This excludes the inside page */
+#why_us .flip-card {
+  height: 15rem;
+  perspective: 100rem;
+  position: absolute;
+  right: 0;
+  transition: all 1s ease;
+  visibility: hidden;
+  width: 15rem;
+  z-index: 100;
+}
+
+/* The outer container's visibility is set to hidden. This is to make everything within the container NOT set to hidden  */
+/* This is done so content in the inside page can be selected */
+#why_us .flip-card > * {
+  visibility: visible;
+}
+
+/* An inner container to hold the flip card. This excludes the inside page */
+#why_us .flip-card__container {
+  height: 100%;
+  position: absolute;
+  right: 0;
+  transform-origin: left;
+  transform-style: preserve-3d;
+  transition: all 1s ease;
+  width: 100%;
+}
+
+#why_us .card-front,
+.card-back {
+  backface-visibility: hidden;
+  height: 100%;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+
+/* Styling for the front side of the flip card */
+
+/* container for the front side */
+#why_us .card-front {
+  background-color: #fafbfa;
+  height: 15rem;
+  width: 15rem;
+}
+
+/* Front side's top section */
+#why_us .card-front__tp {
+  align-items: center;
+  clip-path: polygon(0 0, 100% 0, 100% 90%, 57% 90%, 50% 100%, 43% 90%, 0 90%);
+  display: flex;
+  flex-direction: column;
+  height: 12rem;
+  justify-content: center;
+  padding: 0.75rem;
+}
+
+#why_us .card-front__tp--city {
+  background: linear-gradient(to bottom, #ff73b9, var(--fuschia));
+}
+
+/* Front card's bottom section */
+#why_us .card-front__bt {
+  align-items: center;
   display: flex;
   justify-content: center;
-  align-items: center;
-  position: relative;
 }
-#why_us .main .sneaker img {
-  width: 20%;
-  z-index: 2;
-  margin: 0 auto;
-  transition: 0.6s;
-}
-#why_us .main .info {
-  padding: 10px 0;
-  text-align: center;
-}
-#why_us .main .info h1 {
-  font-size: 30px;
-}
-#why_us .main .info p {
-  font-size: 1rem;
 
-  color: #585858;
-  font-weight: lighter;
+/* Styling for the back side of the flip card */
+
+#why_us .card-back {
+  background-color: #fafbfa;
+  transform: rotateY(180deg);
 }
-#why_us .card {
+
+/* Specifically targeting the <video> element */
+#why_us .video__container {
+  clip-path: polygon(0% 0%, 100% 0%, 90% 50%, 100% 100%, 0% 100%);
+  height: auto;
+  min-height: 100%;
+  object-fit: cover;
   width: 100%;
-  border: 1px solid #ddd;
-  background: #fff;
-  border-radius: 20px;
-  padding: 15px;
-}
-#why_us .card .salid {
-  position: relative;
-}
-#why_us .card .salid .s i {
-  position: absolute;
-  left: 38px;
-  top: 0;
-  border: 1px solid var(--c1);
-  border-radius: 50%;
-  background: var(--c1);
-  color: #fff;
-  border: 0;
 }
 
-#why_us .salid .s img {
-  margin-right: 15px;
-  border: 3px solid tomato;
-  border-radius: 50%;
-  margin-bottom: 20px;
-  width: 20%;
+/* Inside page */
+
+#why_us .inside-page {
+  background-color: #fafbfa;
+  box-shadow: inset 20rem 0px 5rem -2.5rem rgba(0, 0, 0, 0.25);
+  height: 100%;
+  padding: 1rem;
+  position: absolute;
+  right: 0;
+  transition: all 1s ease;
+  width: 15rem;
+  z-index: 1;
 }
-#why_us .card .s1 h2 {
-  font-size: 20px;
-}
-.owl-dots {
+
+#why_us .inside-page__container {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
   text-align: center;
+  width: 100%;
 }
-.owl-dots button {
-  background: wheat !important;
-  height: 20px;
-  width: 20px;
-  margin: 5px;
-  border-radius: 50%;
-  -webkit-border-radius: 50%;
-  -moz-border-radius: 50%;
-  -ms-border-radius: 50%;
-  -o-border-radius: 50%;
+
+/* Functionality ====================================*/
+
+/* This is to keep the card centered (within its container) when opened */
+#why_us .card:hover {
+  box-shadow: -0.1rem 1.7rem 6.6rem -3.2rem rgba(0, 0, 0, 0.75);
+  width: 30rem;
 }
-.owl-dots .active {
-  background-color: var(--c3) !important ;
-  width: 40px;
-  transition: 0.4s;
-  border-radius: 25px;
-  -webkit-border-radius: 25px;
-  -moz-border-radius: 25px;
-  -ms-border-radius: 25px;
-  -o-border-radius: 25px;
-  -webkit-transition: 0.4s;
-  -moz-transition: 0.4s;
-  -ms-transition: 0.4s;
-  -o-transition: 0.4s;
+
+/* When the card is hovered, the flip card container will rotate */
+#why_us .card:hover .flip-card__container {
+  transform: rotateY(-180deg);
 }
-.owl-nav button:first-child span {
-  position: absolute;
-  color: #ddd;
-  font-size: 150px;
-  top: 40%;
-  left: -5%;
-  transform: translateY(-50%);
-  -webkit-transform: translateY(-50%);
-  -moz-transform: translateY(-50%);
-  -ms-transform: translateY(-50%);
-  -o-transform: translateY(-50%);
-}
-.owl-nav button:last-child span {
-  position: absolute;
-  color: #ddd;
-  font-size: 150px;
-  top: 40%;
-  right: -5%;
-  transform: translateY(-50%);
-  -webkit-transform: translateY(-50%);
-  -moz-transform: translateY(-50%);
-  -ms-transform: translateY(-50%);
-  -o-transform: translateY(-50%);
+
+/* When the card is hovered, the shadow on the inside page will shrink to the left */
+#why_us .card:hover .inside-page {
+  box-shadow: inset 1rem 0px 5rem -2.5rem rgba(0, 0, 0, 0.1);
 }

@@ -1,3 +1,9 @@
+// preloader
+
+setTimeout(function () {
+  $("#pre").fadeToggle();
+}, 2500);
+
 window.addEventListener("scroll", function () {
   let navBar = this.document.querySelector("nav");
   if (this.window.pageYOffset >= 600) {
@@ -50,66 +56,25 @@ function hideMenu() {
 //   }
 // }
 
+//nav button effect
+
+var animateButton = function (e) {
+  e.preventDefault;
+  //reset animation
+  e.target.classList.remove("animate");
+
+  e.target.classList.add("animate");
+  setTimeout(function () {
+    e.target.classList.remove("animate");
+  }, 700);
+};
+
+var bubblyButtons = document.getElementsByClassName("nav_btn");
+
+for (var i = 0; i < bubblyButtons.length; i++) {
+  bubblyButtons[i].addEventListener("click", animateButton, false);
+}
 // slider
-$(document).ready(function () {
-  $(".owl-carousel").owlCarousel({
-    loop: true,
-    margin: 10,
-    responsiveClass: true,
-    nav: true,
-    dots: true,
-    stagePadding: 50,
-    center: true,
-    responsive: {
-      0: {
-        items: 1,
-        nav: false,
-        stagePadding: 0,
-      },
-      600: {
-        items: 3,
-        nav: false,
-      },
-      1000: {
-        items: 3,
-        nav: true,
-      },
-    },
-  });
-});
-
-//Movement Animation to happen
-const card = document.querySelector(".card");
-const container = document.querySelector(".info");
-//Items
-const title = document.querySelector(".info");
-const sneaker = document.querySelector(".sneaker");
-
-//Moving Animation Event
-container.addEventListener("mousemove", (e) => {
-  let xAxis = (window.innerWidth / 2 - e.pageX) / 150;
-  let yAxis = (window.innerHeight / 2 - e.pageY) / 150;
-  card.style.transform = `rotateY(${xAxis}deg) rotateX(${yAxis}deg)`;
-});
-
-//Animate In
-
-container.addEventListener("mouseenter", (e) => {
-  card.style.transition = "none";
-  //Popout
-  title.style.transform = "translateZ(50px)";
-  sneaker.style.transform = "translateZ(50px)";
-});
-
-//Animate Out
-
-container.addEventListener("mouseleave", (e) => {
-  card.style.transition = "all 0.5s ease";
-  card.style.transform = `rotateY(0deg) rotateX(0deg)`;
-  //Popback
-  title.style.transform = "translateZ(0px)";
-  sneaker.style.transform = "translateZ(0px) rotateZ(0deg)";
-});
 
 // aos
 AOS.init();
