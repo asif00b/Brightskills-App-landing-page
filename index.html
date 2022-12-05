@@ -19,20 +19,11 @@
     <!-- venobox -->
     <link rel="stylesheet" href="css/venobox.min.css" />
     <!-- swiper -->
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.3.5/css/swiper.min.css"
-    />
+    <link rel="stylesheet" href="css/swiper.min.css" />
     <!-- swiper -->
     <!-- owl -->
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css"
-    />
+    <link rel="stylesheet" href="css/owl.carousel.min.css" />
+    <link rel="stylesheet" href="css/animate.min.css" />
     <!-- owl -->
     <link
       rel="stylesheet"
@@ -72,7 +63,6 @@
               values="1 0 0 0 0	0 1 0 0 0	0 0 1 0 0	0 0 0 18 -7"
               result="goo"
             ></feColorMatrix>
-            <!--<feBlend in2="goo" in="SourceGraphic" result="mix" ></feBlend>-->
           </filter>
         </defs>
       </svg>
@@ -95,25 +85,25 @@
             <div class="menu" id="menu">
               <i class="fa-solid fa-bars" id="bar" onclick="showMenu()"></i>
               <i class="fa-solid fa-xmark" id="hide" onclick="hideMenu()"></i>
-              <ul>
+              <ul class="navbar_nav">
                 <li id="m1">
-                  <a href="#">Home</a>
+                  <a class="nav_link" href="#">Home</a>
                 </li>
                 <li id="m2">
-                  <a href="#about">About</a>
+                  <a class="nav_link" href="#about">About</a>
                 </li>
                 <li id="m3">
-                  <a href="#features">Features</a>
+                  <a class="nav_link" href="#features">Features</a>
                 </li>
                 <li id="m4">
-                  <a href="#why_us">Why Us?</a>
+                  <a class="nav_link" href="#why_us">Why Us?</a>
                 </li>
                 <li id="m5">
-                  <a href="#screenshot">Screenshot</a>
+                  <a class="nav_link" href="#screenshot">Screenshot</a>
                 </li>
 
                 <li id="m6">
-                  <a href="#">Contact</a>
+                  <a class="nav_link" href="#">Contact</a>
                 </li>
               </ul>
             </div>
@@ -131,7 +121,10 @@
       <div id="particleJs"></div>
       <div class="container">
         <div class="pm">
-          <img src="images/heroMoc.png" alt="" />
+          <picture>
+            <source srcset="images/heroMoc.png" type="image/png" />
+            <img src="images/heroMoc.png" alt="" loading="lazy" />
+          </picture>
           <div class="hero">
             <div class="typed">
               <h1><span class="type"></span></h1>
@@ -147,8 +140,22 @@
           </div>
         </div>
         <div class="side_img">
-          <img src="images/mobile_screen_side.png" alt="" />
-          <img src="images/mobile_screen_side2.png" alt="" />
+          <picture>
+            <source srcset="images/mobile_screen_side.png" type="image/png" />
+            <img
+              src="images/mobile_screen_side.png"
+              alt="images/mobile_screen_side.png"
+              loading="lazy"
+            />
+          </picture>
+          <picture>
+            <source srcset="images/mobile_screen_side2.png" type="image/png" />
+            <img
+              src="images/mobile_screen_side2.png"
+              alt="images/mobile_screen_side2.png"
+              loading="lazy"
+            />
+          </picture>
         </div>
         <div class="heroV">
           <img src="images/heroV.png" alt="" />
@@ -411,28 +418,39 @@
         </div>
       </div>
     </section>
+    <!-- counter -->
     <section id="counter">
       <div class="container">
         <div class="main">
-          <div class="counterup" data-aos="zoom-in-up">
-            <i class="fa-regular fa-face-smile"></i>
-            <h2 class="counter-text" data-number="130"></h2>
-            <h3>Happy User</h3>
-          </div>
-          <div class="counterup" data-aos="zoom-in-up">
-            <i class="fa-regular fa-face-smile"></i>
-            <h2 class="counter-text" data-number="130"></h2>
-            <h3>Happy User</h3>
-          </div>
-          <div class="counterup" data-aos="zoom-in-up">
-            <i class="fa-regular fa-face-smile"></i>
-            <h2 class="counter-text" data-number="130"></h2>
-            <h3>Happy User</h3>
-          </div>
-          <div class="counterup" data-aos="zoom-in-up">
-            <i class="fa-regular fa-face-smile"></i>
-            <h2 class="counter-text" data-number="130"></h2>
-            <h3>Happy User</h3>
+          <div class="row">
+            <div class="col-lg-3 col-6">
+              <div class="counterup" data-aos="zoom-in-up">
+                <i class="fa-solid fa-face-smile-beam"></i>
+                <h2 class="counter-text" data-number="750">+</h2>
+                <h3>Happy User</h3>
+              </div>
+            </div>
+            <div class="col-lg-3 col-6">
+              <div class="counterup" data-aos="zoom-in-up">
+                <i class="fa-solid fa-users"></i>
+                <h2 class="counter-text" data-number="420">+</h2>
+                <h3>Positive Review</h3>
+              </div>
+            </div>
+            <div class="col-lg-3 col-6">
+              <div class="counterup" data-aos="zoom-in-up">
+                <i class="fa-solid fa-star"></i>
+                <h2 class="counter-text" data-number="5"></h2>
+                <h3>Student Rating</h3>
+              </div>
+            </div>
+            <div class="col-lg-3 col-6">
+              <div class="counterup" data-aos="zoom-in-up">
+                <i class="fa-solid fa-star"></i>
+                <h2 class="counter-text" data-number="5"></h2>
+                <h3>Student Rating</h3>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -502,7 +520,7 @@
             </div>
           </div>
           <div class="usage_col">
-            <div class="row justify-content-evenly">
+            <div class="row justify-content-evenly usage_col_rev">
               <div class="col-lg-3">
                 <div class="u_card" data-aos="fade-left" data-aos-delay="50">
                   <div class="icon">
@@ -696,7 +714,7 @@
         <div class="title">
           <h2 class="section-title">Why <span>Us ?</span></h2>
         </div>
-        <main class="main">
+        <div class="main">
           <section class="card-area">
             <!-- Best Performance-->
             <section class="card-section">
@@ -837,7 +855,7 @@
               </div>
             </section>
           </section>
-        </main>
+        </div>
       </div>
     </section>
     <section id="review">
@@ -960,7 +978,7 @@
     <section id="screenshot">
       <div class="container">
         <div class="title">
-          <h2 class="section-title">App <span>Features</span></h2>
+          <h2 class="section-title"><span>Screenshots</span></h2>
         </div>
         <div class="main">
           <div class="carousel" data-flickity='{ "wrapAround": true }'>
@@ -995,7 +1013,7 @@
     <section id="contact">
       <div class="container">
         <div class="title">
-          <h2 class="section-title">App <span>Features</span></h2>
+          <h2 class="section-title">Contact <span>Us</span></h2>
         </div>
         <div class="main">
           <div class="row align-items-center">
@@ -1069,12 +1087,12 @@
                 <h3>Keep in Touch</h3>
               </div>
               <div class="contact_form" data-aos="fade-left">
-                <form action="">
-                  <label for="name">Name</label>
+                <form>
+                  <label>Name</label>
                   <input type="text" placeholder="Enter Your Name" />
-                  <label for="email">Email</label>
+                  <label>Email</label>
                   <input type="email" placeholder="Enter Your Email" />
-                  <label for="phone">Phone</label>
+                  <label>Phone</label>
                   <input type="tel" placeholder="Enter Your Number" />
                   <button type="submit">Send</button>
                 </form>
@@ -1088,69 +1106,97 @@
       <div class="container">
         <div class="main">
           <div class="row">
-            <div class="col-lg-6">
-              <div class="logo">
-                <img src="images/footer_logo.png" alt="" />
-              </div>
-              <div class="txt">
-                <p>
-                  Bright Skills is one of the best e-learning skill development
-                  platform in Bangladesh. We are committed to eliminating
-                  unemployment from the country and creating global human
-                  resources through skill development.
-                </p>
-              </div>
-              <div class="download">
-                <a href="#">
-                  <div class="dld">
-                    <img src="images/google-play.png" alt="" />
-                    <div class="div">
-                      <span>Android App On</span>
-                      <h4>Play Store</h4>
+            <div class="col-lg-5">
+              <div class="left">
+                <div class="logo">
+                  <img src="images/footer_logo.png" alt="" />
+                </div>
+                <div class="txt">
+                  <p>
+                    Bright Skills is one of the best e-learning skill
+                    development platform in Bangladesh. We are committed to
+                    eliminating unemployment from the country and creating
+                    global human resources through skill development.
+                  </p>
+                </div>
+                <div class="download">
+                  <a
+                    href="https://play.google.com/store/apps/details?id=com.brightskills.app&hl=en&gl=US"
+                    target="_blank"
+                  >
+                    <div class="dld">
+                      <img src="images/google-play.png" alt="" />
+                      <div class="div">
+                        <span>Android App On</span>
+                        <h4>Play Store</h4>
+                      </div>
                     </div>
-                  </div>
-                </a>
-                <a href="#">
-                  <div class="dld">
-                    <img src="images/app-store.png" alt="" />
-                    <div>
-                      <span>Available on the</span>
-                      <h4>App Store</h4>
-                    </div>
-                  </div>
-                </a>
-              </div>
-              <div class="icon">
-                <i class="fa-brands fa-facebook-f"></i>
-                <i class="fa-brands fa-youtube"></i>
-                <i class="fa-brands fa-twitter"></i>
+                  </a>
+                </div>
+                <div class="icon">
+                  <a
+                    href="https://www.facebook.com/brightskillsofficial"
+                    target="_blank"
+                    ><i class="fa-brands fa-facebook-f"></i
+                  ></a>
+                  <a
+                    href="https://www.youtube.com/channel/UCWNTDihqJIhJGy4YbwokFsg/featured"
+                    target="_blank"
+                    ><i class="fa-brands fa-youtube"></i
+                  ></a>
+                  <a href="https://www.brightskills.com/" target="_blank"
+                    ><i class="fa-solid fa-globe"></i
+                  ></a>
+                  <a
+                    href="https://www.linkedin.com/company/73013266/"
+                    target="_blank"
+                  >
+                    <i class="fa-brands fa-linkedin-in"></i>
+                  </a>
+                </div>
               </div>
             </div>
-            <div class="col-lg-3 col-6">
+            <div class="col-lg-3">
               <div class="links1">
                 <h4>Required links</h4>
                 <ul>
                   <li><a href="#">Find the certificate</a></li>
                   <li><a href="#">Student feedback</a></li>
                   <li><a href="#">Certification</a></li>
-                  <li><a href="#">contact us</a></li>
-                  <li><a href="#">Blog</a></li>
+                  <li><a href="#">Privacy Policy</a></li>
+                  <li><a href="#">Terms of Use</a></li>
                 </ul>
               </div>
             </div>
-            <div class="col-lg-3 col-6">
+            <div class="col-lg-4">
               <div class="links1">
-                <h4>Legal</h4>
-                <ul>
-                  <li><a href="#">Terms of Use</a></li>
-                  <li><a href="#">FAQ</a></li>
-                  <li><a href="#">Privacy Policy</a></li>
-                  <li>
-                    <a href="#" mailto="info@brightskill.com"
-                      >info@brightskill.com</a
-                    >
-                  </li>
-                </ul>
+                <h4>Our Pertners</h4>
+                <div class="brands">
+                  <div class="partners">
+                    <a href="#">
+                      <img src="images/prt1.png" alt="" />
+                    </a>
+                    <a href="#">
+                      <img src="images/prt2.png" alt="" />
+                    </a>
+                  </div>
+                  <div class="partners">
+                    <a href="#">
+                      <img src="images/prt3.png" alt="" />
+                    </a>
+                    <a href="#">
+                      <img src="images/prt4.png" alt="" />
+                    </a>
+                  </div>
+                  <div class="partners">
+                    <a href="#">
+                      <img src="images/prt5.png" alt="" />
+                    </a>
+                    <a href="#">
+                      <img src="images/prt6.png" alt="" />
+                    </a>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
@@ -1171,12 +1217,12 @@
     <!-- venobox -->
     <script src="js/venobox.min.js"></script>
     <!-- swiper -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.3.5/js/swiper.min.js"></script>
+    <script src="js/swiper.min.js"></script>
     <!-- swiper -->
     <!-- owl -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+    <script src="js/owl.carousel.min.js"></script>
     <!-- owl -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/flickity/2.2.1/flickity.pkgd.min.js"></script>
+    <script src="js/flickity.pkgd.min.js"></script>
     <script src="js/typed.min.js"></script>
     <script src="js/particles.min.js"></script>
     <script src="js/ps.js"></script>

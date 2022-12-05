@@ -1,11 +1,18 @@
 @media (min-width: 320px) and (max-width: 575.98px) {
   nav {
     overflow: hidden;
+    top: 10px;
   }
   .logo {
     width: 80%;
   }
+  .logo img {
+    width: 60%;
+  }
   .sticky {
+    display: none;
+  }
+  nav .n_btn .nav_btn {
     display: none;
   }
   .menu i {
@@ -52,42 +59,42 @@
     );
   }
   .menu ul #m1 {
-    margin-left: 200px;
+    margin-left: 300px;
     transition: 0.4s;
   }
   .menu ul #m2 {
-    margin-left: 200px;
+    margin-left: 300px;
     transition: 0.4s;
     transition-delay: 0.1s;
   }
   .menu ul #m3 {
-    margin-left: 200px;
+    margin-left: 300px;
     transition: 0.4s;
     transition-delay: 0.2s;
   }
   .menu ul #m4 {
-    margin-left: 200px;
+    margin-left: 300px;
     transition: 0.4s;
     transition-delay: 0.3s;
   }
   .menu ul #m5 {
-    margin-left: 200px;
+    margin-left: 300px;
     transition: 0.4s;
     transition-delay: 0.4s;
   }
   .menu ul #m6 {
-    margin-left: 200px;
+    margin-left: 300px;
     transition: 0.4s;
     transition-delay: 0.5s;
   }
-  .menu ul li a {
+  .menu ul li .nav_link {
     font-size: 0.8rem;
     color: #ffffff;
     text-transform: uppercase;
   }
   #hero_section {
     width: 100%;
-    height: 60vh;
+    height: 350px;
     padding: 4% 0;
     background: #ffe5d2;
     position: relative;
@@ -106,7 +113,7 @@
     border: 1px solid rgba(223, 104, 18, 0.18);
     top: 50%;
     transform: translate(140%, -58%) scale(0);
-    z-index: 2;
+    z-index: 999;
     transition: all 0.5s;
     animation: pm 1.5s cubic-bezier(0.4, 0, 1, 1) 2s forwards;
   }
@@ -157,32 +164,29 @@
     bottom: 24%;
     color: #f3f3f3;
   }
-  #hero_section .pm .hero a {
-    position: absolute;
-    bottom: 17%;
-    left: 39%;
-    font-size: 0.5rem;
-    font-weight: 700;
-    color: #ffffff;
-    background: var(--c1);
-    padding: 5px 10px;
-    border-radius: 2px;
-    z-index: 1;
-    box-shadow: -1px 2px 5px -3px rgb(0 0 0 / 65%);
-    text-transform: uppercase;
+  #hero_section .pm .hero .hero_btn {
+    font-size: 10px;
+    padding: 5px 0px;
+    margin-left: 0;
+    width: 85px;
+    border-radius: 3px;
+    overflow: hidden;
+    cursor: pointer;
+    left: 3px;
+    top: 38px;
   }
 
   #hero_section .side_img {
     display: block;
   }
-  #hero_section .side_img img:first-child {
+  #hero_section .side_img picture:first-child img {
     position: absolute;
     top: 27%;
     right: -12%;
     z-index: 0;
     opacity: 0.8;
   }
-  #hero_section .side_img img:last-child {
+  #hero_section .side_img picture:last-child img {
     position: absolute;
     top: 27%;
     right: -270px;
@@ -222,6 +226,11 @@
     font-weight: 700;
     color: var(--c3);
   }
+
+  #about .about_txt {
+    padding: 0 10%;
+    margin-bottom: 30px;
+  }
   #about .about_txt h3 {
     font-size: 2.5em;
     font-weight: 700;
@@ -235,7 +244,23 @@
     color: var(--c4);
     width: auto;
   }
+  /* counter */
+  #counter .counterup {
+    padding: 30px 10px;
+  }
+  #counter .counterup i {
+    font-size: 3em;
+  }
+  #counter .counterup h2 {
+    font-size: 3em;
+  }
+  #counter .counterup h3 {
+    font-size: 1.5em;
+  }
   /* usage */
+  #usage {
+    height: auto;
+  }
   #usage .main .u_card .txt h4 {
     font-size: 2.5em;
     margin: 10px 0;
@@ -246,9 +271,19 @@
   }
 
   #usage .main .ra img {
-    width: 15%;
-    transform: rotate(90deg);
+    width: 50px;
     margin: 15px 0;
+    rotate: 90deg;
+  }
+  #usage .main .usage_col .ra_middle {
+    width: 50px;
+    left: 45%;
+  }
+  #usage .main .usage_col .usage_col_rev {
+    flex-direction: column-reverse;
+  }
+  #usage .main .ra .flip {
+    rotate: -90deg;
   }
   /* features */
   #features {
@@ -262,6 +297,9 @@
     line-height: 20px;
     width: 80%;
     margin-left: auto;
+  }
+  #features .main .feature {
+    pointer-events: none;
   }
   #features .f_mockup {
     display: none;
@@ -278,9 +316,47 @@
   #features .main .right_features .feature p {
     margin: 0;
   }
+  #why_us {
+    padding: 10% 0 0;
+    background-image: linear-gradient(
+        to bottom,
+        rgba(245, 246, 252, 0.52),
+        rgba(117, 19, 93, 0.73)
+      ),
+      url("../images/usage_bg.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: repeat-y;
+  }
   #why_us .main .card {
     width: auto;
     margin-bottom: 15px;
+  }
+  #why_us .card:hover {
+    transform: scalex(0.75);
+    width: 0rem;
+  }
+  #why_us .card-area {
+    align-items: flex-end;
+    padding: 0;
+  }
+  #why_us .card-section {
+    flex-direction: column;
+    align-items: flex-end;
+    transform: scale(0.8);
+  }
+  #contact
+    .blog-slider.swiper-container-fade.swiper-container-horizontal.aos-init.aos-animate {
+    margin: 100px auto;
+  }
+  footer .left {
+    margin-bottom: 25px;
+  }
+  footer .logo {
+    width: 60%;
+  }
+  footer .logo img {
+    width: 100%;
   }
 }
 

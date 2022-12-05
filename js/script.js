@@ -2,8 +2,22 @@
 
 setTimeout(function () {
   $("#pre").fadeToggle();
-}, 2500);
+}, 2000);
+// back to top
 
+$(document).ready(function () {
+  $(window).scroll(function () {
+    if ($(this).scrollTop() > 100) {
+      $("#scroll").fadeIn();
+    } else {
+      $("#scroll").fadeOut();
+    }
+  });
+  $("#scroll").click(function () {
+    $("html, body").animate({ scrollTop: 0 }, 600);
+    return false;
+  });
+});
 // body bg
 // Some random colors
 const colors = ["#3CC157", "#2AA7FF", "#1B1B1B", "#FCBC0F", "#F85F36"];
@@ -47,6 +61,12 @@ balls.forEach((el, i, ra) => {
   );
 });
 
+// active menu
+$(".nav_link").click(function () {
+  $(".active_nav").removeClass("active_nav");
+  $(this).addClass("active_nav");
+});
+
 // scrool nav
 window.addEventListener("scroll", function () {
   let navBar = this.document.querySelector("nav");
@@ -82,12 +102,12 @@ function showMenu() {
   hide.style.right = "20px";
 }
 function hideMenu() {
-  m1.style.marginLeft = "200px";
-  m2.style.marginLeft = "200px";
-  m3.style.marginLeft = "200px";
-  m4.style.marginLeft = "200px";
-  m5.style.marginLeft = "200px";
-  m6.style.marginLeft = "200px";
+  m1.style.marginLeft = "300px";
+  m2.style.marginLeft = "300px";
+  m3.style.marginLeft = "300px";
+  m4.style.marginLeft = "300px";
+  m5.style.marginLeft = "300px";
+  m6.style.marginLeft = "300px";
   bar.style.top = "8px";
   hide.style.right = "-200px";
 }
@@ -142,7 +162,7 @@ getNumber.map((viewNumber) => {
   };
   let countStop = setInterval(() => {
     counterUP();
-  }, 13);
+  }, 10);
 });
 
 // counter
@@ -243,28 +263,13 @@ var swiper = new Swiper(".blog-slider", {
   spaceBetween: 30,
   effect: "fade",
   loop: true,
+  autoplay: true,
   mousewheel: {
-    invert: false,
+    invert: true,
   },
   // autoHeight: true,
   pagination: {
     el: ".blog-slider__pagination",
     clickable: true,
   },
-});
-
-// back to top
-
-$(document).ready(function () {
-  $(window).scroll(function () {
-    if ($(this).scrollTop() > 100) {
-      $("#scroll").fadeIn();
-    } else {
-      $("#scroll").fadeOut();
-    }
-  });
-  $("#scroll").click(function () {
-    $("html, body").animate({ scrollTop: 0 }, 600);
-    return false;
-  });
 });
