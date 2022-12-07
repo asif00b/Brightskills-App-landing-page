@@ -2,22 +2,8 @@
 
 setTimeout(function () {
   $("#pre").fadeToggle();
-}, 2000);
-// back to top
+}, 2500);
 
-$(document).ready(function () {
-  $(window).scroll(function () {
-    if ($(this).scrollTop() > 100) {
-      $("#scroll").fadeIn();
-    } else {
-      $("#scroll").fadeOut();
-    }
-  });
-  $("#scroll").click(function () {
-    $("html, body").animate({ scrollTop: 0 }, 600);
-    return false;
-  });
-});
 // body bg
 // Some random colors
 const colors = ["#3CC157", "#2AA7FF", "#1B1B1B", "#FCBC0F", "#F85F36"];
@@ -67,15 +53,23 @@ $(".nav_link").click(function () {
   $(this).addClass("active_nav");
 });
 
-// scrool nav
-window.addEventListener("scroll", function () {
-  let navBar = this.document.querySelector("nav");
-  if (this.window.pageYOffset >= 600) {
-    navBar.classList.add("sticky");
-  } else {
-    navBar.classList.remove("sticky");
-  }
-});
+// Back to top button
+(function () {
+  $(document).ready(function () {
+    return (
+      $(window).scroll(function () {
+        return $(window).scrollTop() > 200
+          ? $("#back-to-top").addClass("show")
+          : $("#back-to-top").removeClass("show");
+      }),
+      $("#back-to-top").click(function () {
+        return $("html,body").animate({
+          scrollTop: "0",
+        });
+      })
+    );
+  });
+}.call(this));
 
 // typed js
 var typed3 = new Typed(".type", {
@@ -108,18 +102,9 @@ function hideMenu() {
   m4.style.marginLeft = "300px";
   m5.style.marginLeft = "300px";
   m6.style.marginLeft = "300px";
-  bar.style.top = "8px";
+  bar.style.top = "0";
   hide.style.right = "-200px";
 }
-
-// function showMenu() {
-//   var x = document.getElementById("m1");
-//   if (m1.style.marginLeft == "200px") {
-//     m1.style.marginLeft = "0";
-//   } else {
-//     m1.style.marginLeft = "200px";
-//   }
-// }
 
 //nav button effect
 
@@ -166,8 +151,6 @@ getNumber.map((viewNumber) => {
 });
 
 // counter
-// aos
-AOS.init();
 
 // testimoni slider
 
