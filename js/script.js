@@ -3,7 +3,23 @@
 setTimeout(function () {
   $("#pre").fadeToggle();
 }, 2500);
-
+// back to top
+(function () {
+  $(document).ready(function () {
+    return (
+      $(window).scroll(function () {
+        return $(window).scrollTop() > 200
+          ? $("#back-to-top").addClass("show")
+          : $("#back-to-top").removeClass("show");
+      }),
+      $("#back-to-top").click(function () {
+        return $("html,body").animate({
+          scrollTop: "0",
+        });
+      })
+    );
+  });
+}.call(this));
 // body bg
 // Some random colors
 const colors = ["#3CC157", "#2AA7FF", "#1B1B1B", "#FCBC0F", "#F85F36"];
@@ -53,23 +69,15 @@ $(".nav_link").click(function () {
   $(this).addClass("active_nav");
 });
 
-// Back to top button
-(function () {
-  $(document).ready(function () {
-    return (
-      $(window).scroll(function () {
-        return $(window).scrollTop() > 200
-          ? $("#back-to-top").addClass("show")
-          : $("#back-to-top").removeClass("show");
-      }),
-      $("#back-to-top").click(function () {
-        return $("html,body").animate({
-          scrollTop: "0",
-        });
-      })
-    );
-  });
-}.call(this));
+// scrool nav
+window.addEventListener("scroll", function () {
+  let navBar = this.document.querySelector("nav");
+  if (this.window.pageYOffset >= 600) {
+    navBar.classList.add("sticky");
+  } else {
+    navBar.classList.remove("sticky");
+  }
+});
 
 // typed js
 var typed3 = new Typed(".type", {
@@ -151,6 +159,8 @@ getNumber.map((viewNumber) => {
 });
 
 // counter
+// aos
+AOS.init();
 
 // testimoni slider
 
