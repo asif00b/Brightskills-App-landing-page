@@ -36,7 +36,7 @@
     <link rel="stylesheet" href="css/style.css" />
     <link rel="stylesheet" href="css/responsive.css" />
   </head>
-  <body>
+  <body data-bs-spy="scroll">
     <!-- preloader -->
 
     <div id="pre">
@@ -52,17 +52,17 @@
       <svg version="1.1" xmlns="http://www.w3.org/2000/svg">
         <defs>
           <filter id="goo">
-            <!-- <feGaussianBlur
+            <feGaussianBlur
               in="SourceGraphic"
               result="blur"
               stdDeviation="12"
-            ></feGaussianBlur> -->
-            <!-- <feColorMatrix
+            ></feGaussianBlur>
+            <feColorMatrix
               in="blur"
               mode="matrix"
               values="1 0 0 0 0	0 1 0 0 0	0 0 1 0 0	0 0 0 18 -7"
               result="goo"
-            ></feColorMatrix> -->
+            ></feColorMatrix>
           </filter>
         </defs>
       </svg>
@@ -73,7 +73,7 @@
     <!--===================================
       nav section starts here
       ==============================-->
-    <nav>
+    <nav id="navBar">
       <div class="container">
         <div class="row align-items-center">
           <div class="col-lg-2 col-sm-4 col-md-4">
@@ -426,7 +426,7 @@
                     data-autoplay="true"
                     data-vbtype="video"
                     data-ratio="16x9"
-                    data-maxwidth="80%"
+                    data-maxwidth="85%"
                     href="https://youtu.be/2QEyCxEEAfY"
                   >
                     <i class="fa-solid fa-play pulse"></i>
@@ -497,13 +497,7 @@
               <div class="col-lg-3">
                 <div class="u_card" data-aos="fade-right" data-aos-delay="50">
                   <div class="icon">
-                    <picture>
-                      <img
-                        src="images/cloud-computing.png"
-                        alt="cloud-computing.png"
-                        loading="lazy"
-                      />
-                    </picture>
+                    <i class="fa-solid fa-download"></i>
                   </div>
                   <div class="txt">
                     <h4>Install the app</h4>
@@ -529,13 +523,7 @@
               <div class="col-lg-3">
                 <div class="u_card" data-aos="fade-right" data-aos-delay="70">
                   <div class="icon">
-                    <picture>
-                      <img
-                        src="images/add-user.png"
-                        alt="add-user.png"
-                        loading="lazy"
-                      />
-                    </picture>
+                    <i class="fa-solid fa-user-plus"></i>
                   </div>
                   <div class="txt">
                     <h4>Create account</h4>
@@ -561,13 +549,7 @@
               <div class="col-lg-3">
                 <div class="u_card" data-aos="fade-right" data-aos-delay="90">
                   <div class="icon">
-                    <picture>
-                      <img
-                        src="images/browsing.png"
-                        alt="browsing.png"
-                        loading="lazy"
-                      />
-                    </picture>
+                    <i class="fa-solid fa-book"></i>
                   </div>
                   <div class="txt">
                     <h4>Browse courses</h4>
@@ -593,13 +575,7 @@
               <div class="col-lg-3">
                 <div class="u_card" data-aos="fade-left" data-aos-delay="50">
                   <div class="icon">
-                    <picture>
-                      <img
-                        src="images/cheers.png"
-                        alt="cheers.png"
-                        loading="lazy"
-                      />
-                    </picture>
+                    <i class="fa-solid fa-graduation-cap"></i>
                   </div>
                   <div class="txt">
                     <h4>Enjoy Your Course</h4>
@@ -625,9 +601,7 @@
               <div class="col-lg-3">
                 <div class="u_card" data-aos="fade-left" data-aos-delay="70">
                   <div class="icon">
-                    <picture>
-                      <img src="images/buy.png" alt="buy.png" loading="lazy" />
-                    </picture>
+                    <i class="fa-solid fa-cart-shopping"></i>
                   </div>
                   <div class="txt">
                     <h4>Enroll Your Course</h4>
@@ -653,13 +627,7 @@
               <div class="col-lg-3">
                 <div class="u_card" data-aos="fade-left" data-aos-delay="90">
                   <div class="icon">
-                    <picture>
-                      <img
-                        src="images/choice.png"
-                        alt="choice.png"
-                        loading="lazy"
-                      />
-                    </picture>
+                    <i class="fa-solid fa-clipboard-check"></i>
                   </div>
                   <div class="txt">
                     <h4>Choose Course</h4>
@@ -868,40 +836,15 @@
             <div class="front card_front1">
               <h1 class="text-shadow">Tutorials</h1>
             </div>
-            <div class="back">
-              <h2>Huge course repository</h2>
-              <p>
-                More than 15,000 video courses on self-skill and career
-                development. Each course is designed by skilled and experienced
-                instructors.
-              </p>
-            </div>
           </div>
           <div class="flip">
             <div class="front card_front2">
               <h1 class="text-shadow">24/7 Live Support</h1>
             </div>
-            <div class="back">
-              <h2>Always available for you</h2>
-              <p>
-                We have a 24/7 online career support team to provide students
-                with career guidance. So, don’t be late. Download the bright
-                skills app right now and start learning from the on- demand
-                courses.
-              </p>
-            </div>
           </div>
           <div class="flip">
             <div class="front card_front3">
               <h1 class="text-shadow">Quiz & Exam</h1>
-            </div>
-            <div class="back">
-              <h2>Perticipate and improve your skills</h2>
-              <p>
-                Each tutorial has a quiz and exam system for merit evaluation.
-                Each course is suitable for all learners from beginner to
-                advanced level.Certificates are awarded.
-              </p>
             </div>
           </div>
         </div>
@@ -1184,7 +1127,17 @@
                           elit. Recusandae voluptate repellendus magni illo ea
                           animi?
                         </div>
-                        <a href="#" class="blog-slider__button">READ MORE</a>
+                        <div class="icon">
+                          <a href="#" class="blog-slider__button">
+                            <i class="fa-brands fa-facebook-f"></i>
+                          </a>
+                          <a href="#" class="blog-slider__button">
+                            <i class="fa-brands fa-facebook-f"></i>
+                          </a>
+                          <a href="#" class="blog-slider__button">
+                            <i class="fa-brands fa-facebook-f"></i>
+                          </a>
+                        </div>
                       </div>
                     </div>
                     <div class="blog-slider__item swiper-slide">
@@ -1205,7 +1158,17 @@
                           elit. Recusandae voluptate repellendus magni illo ea
                           animi?
                         </div>
-                        <a href="#" class="blog-slider__button">READ MORE</a>
+                        <div class="icon">
+                          <a href="#" class="blog-slider__button">
+                            <i class="fa-brands fa-facebook-f"></i>
+                          </a>
+                          <a href="#" class="blog-slider__button">
+                            <i class="fa-brands fa-facebook-f"></i>
+                          </a>
+                          <a href="#" class="blog-slider__button">
+                            <i class="fa-brands fa-facebook-f"></i>
+                          </a>
+                        </div>
                       </div>
                     </div>
 
@@ -1227,7 +1190,17 @@
                           elit. Recusandae voluptate repellendus magni illo ea
                           animi?
                         </div>
-                        <a href="#" class="blog-slider__button">READ MORE</a>
+                        <div class="icon">
+                          <a href="#" class="blog-slider__button">
+                            <i class="fa-brands fa-facebook-f"></i>
+                          </a>
+                          <a href="#" class="blog-slider__button">
+                            <i class="fa-brands fa-facebook-f"></i>
+                          </a>
+                          <a href="#" class="blog-slider__button">
+                            <i class="fa-brands fa-facebook-f"></i>
+                          </a>
+                        </div>
                       </div>
                     </div>
                     <div class="blog-slider__item swiper-slide">
@@ -1248,7 +1221,17 @@
                           elit. Recusandae voluptate repellendus magni illo ea
                           animi?
                         </div>
-                        <a href="#" class="blog-slider__button">READ MORE</a>
+                        <div class="icon">
+                          <a href="#" class="blog-slider__button">
+                            <i class="fa-brands fa-facebook-f"></i>
+                          </a>
+                          <a href="#" class="blog-slider__button">
+                            <i class="fa-brands fa-facebook-f"></i>
+                          </a>
+                          <a href="#" class="blog-slider__button">
+                            <i class="fa-brands fa-facebook-f"></i>
+                          </a>
+                        </div>
                       </div>
                     </div>
                     <div class="blog-slider__item swiper-slide">
@@ -1260,6 +1243,26 @@
                             loading="lazy"
                           />
                         </picture>
+                      </div>
+                      <div class="blog-slider__content">
+                        <span class="blog-slider__code">Team Member</span>
+                        <div class="blog-slider__title">MAHIBUL ISLAM</div>
+                        <div class="blog-slider__text">
+                          Lorem ipsum dolor sit amet consectetur, adipisicing
+                          elit. Recusandae voluptate repellendus magni illo ea
+                          animi?
+                        </div>
+                        <div class="icon">
+                          <a href="#" class="blog-slider__button">
+                            <i class="fa-brands fa-facebook-f"></i>
+                          </a>
+                          <a href="#" class="blog-slider__button">
+                            <i class="fa-brands fa-facebook-f"></i>
+                          </a>
+                          <a href="#" class="blog-slider__button">
+                            <i class="fa-brands fa-facebook-f"></i>
+                          </a>
+                        </div>
                       </div>
                     </div>
                   </div>
