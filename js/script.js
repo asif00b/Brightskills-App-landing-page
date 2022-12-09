@@ -64,16 +64,12 @@ balls.forEach((el, i, ra) => {
 });
 
 // active menu
-// Add active class to the current button (highlight it)
-var header = document.getElementById("navBar");
-var btns = header.getElementsByClassName("nav_link");
-for (var i = 0; i < btns.length; i++) {
-  btns[i].addEventListener("click", function () {
-    var current = document.getElementsByClassName("active_nav");
-    current[0].className = current[0].className.replace(" active_nav", "");
-    this.className += " active_nav";
+$(document).ready(function () {
+  $(".nav_link").click(function () {
+    $(".nav_link").removeClass("active_nav");
+    $(this).addClass("active_nav");
   });
-}
+});
 // scrool nav
 window.addEventListener("scroll", function () {
   let navBar = this.document.querySelector("nav");
