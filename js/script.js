@@ -40,7 +40,6 @@ for (let i = 0; i < numBalls; i++) {
   balls.push(ball);
   document.body.append(ball);
 }
-
 // Keyframes
 balls.forEach((el, i, ra) => {
   let to = {
@@ -111,7 +110,7 @@ function hideMenu() {
   m4.style.marginLeft = "300px";
   m5.style.marginLeft = "300px";
   m6.style.marginLeft = "300px";
-  bar.style.top = "0";
+  bar.style.top = "10px";
   hide.style.right = "-200px";
 }
 
@@ -141,22 +140,9 @@ new VenoBox({
 });
 
 // counter
-let totalNumber = document.querySelectorAll(".counter-text");
-let getNumber = Array.from(totalNumber);
-
-getNumber.map((viewNumber) => {
-  console.log(viewNumber.dataset.number);
-  let startCount = 0;
-  let counterUP = () => {
-    startCount++;
-    viewNumber.innerHTML = `${startCount}`;
-    if (startCount == viewNumber.dataset.number) {
-      clearInterval(countStop);
-    }
-  };
-  let countStop = setInterval(() => {
-    counterUP();
-  }, 1);
+$(".count_up").counterUp({
+  delay: 5,
+  time: 800,
 });
 
 // counter
@@ -259,7 +245,7 @@ var swiper = new Swiper(".blog-slider", {
   loop: true,
   autoplay: true,
   mousewheel: {
-    invert: true,
+    invert: false,
   },
   // autoHeight: true,
   pagination: {
